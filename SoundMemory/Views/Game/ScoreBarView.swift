@@ -14,19 +14,21 @@ struct ScoreBarView: View {
             )
 
             Divider()
+                .background(Color.creamDark)
                 .frame(height: 44)
 
             VStack(spacing: 2) {
                 Text(timerString)
-                    .font(.system(size: 18, weight: .bold, design: .monospaced))
-                    .foregroundStyle(.primary)
+                    .font(.system(size: 20, weight: .bold, design: .monospaced))
+                    .foregroundStyle(Color.appNavy)
                 Text("\(moves) moves")
-                    .font(.caption2)
-                    .foregroundStyle(.secondary)
+                    .font(.system(size: 13))
+                    .foregroundStyle(Color.muted)
             }
             .frame(maxWidth: .infinity)
 
             Divider()
+                .background(Color.creamDark)
                 .frame(height: 44)
 
             PlayerScoreCell(
@@ -35,9 +37,11 @@ struct ScoreBarView: View {
             )
         }
         .padding(.vertical, 8)
-        .background(.ultraThinMaterial)
+        .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 14))
-        .padding(.horizontal)
+        .shadow(color: Color.appNavy.opacity(0.10), radius: 8, x: 0, y: 4)
+        .shadow(color: Color.appNavy.opacity(0.06), radius: 2, x: 0, y: 1)
+        .padding(.horizontal, 16)
     }
 }
 
@@ -48,20 +52,14 @@ private struct PlayerScoreCell: View {
     var body: some View {
         VStack(spacing: 2) {
             Text(player.displayName)
-                .font(.caption)
-                .foregroundStyle(isActive ? .primary : .secondary)
+                .font(.system(size: 13))
+                .foregroundStyle(isActive ? Color.appNavy : Color.creamDark)
             Text("\(player.matchedPairCount)")
-                .font(.system(size: 24, weight: .bold, design: .rounded))
-                .foregroundStyle(isActive ? .primary : .secondary)
-            if isActive {
-                Circle()
-                    .fill(Color.accentColor)
-                    .frame(width: 5, height: 5)
-            } else {
-                Circle()
-                    .fill(Color.clear)
-                    .frame(width: 5, height: 5)
-            }
+                .font(.system(size: 28, weight: .bold, design: .rounded))
+                .foregroundStyle(isActive ? Color.appNavy : Color.creamDark)
+            Circle()
+                .fill(isActive ? Color.coral : Color.clear)
+                .frame(width: 5, height: 5)
         }
         .frame(maxWidth: .infinity)
         .animation(.easeInOut(duration: 0.2), value: isActive)
@@ -76,4 +74,5 @@ private struct PlayerScoreCell: View {
         timerString: "01:24"
     )
     .padding()
+    .background(Color.cream)
 }

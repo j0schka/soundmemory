@@ -11,28 +11,29 @@ struct GameOverView: View {
 
     var body: some View {
         ZStack {
-            backgroundGradient
+            LinearGradient(
+                colors: [Color.coral, Color.gold],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
 
             CelebrationView()
 
             VStack(spacing: 0) {
                 Spacer()
 
-                // Result card
                 VStack(spacing: 24) {
                     resultHeader
-
-                    Divider()
-
+                    Divider().background(Color.creamDark)
                     scoreTable
-
-                    Divider()
-
+                    Divider().background(Color.creamDark)
                     timeRow
                 }
                 .padding(24)
-                .background(.ultraThickMaterial)
-                .clipShape(RoundedRectangle(cornerRadius: 24))
+                .background(Color.white.opacity(0.92))
+                .clipShape(RoundedRectangle(cornerRadius: 28))
+                .shadow(color: Color.appNavy.opacity(0.14), radius: 16, x: 0, y: 8)
                 .padding(.horizontal, 24)
                 .scaleEffect(cardAppeared ? 1 : 0.7)
                 .opacity(cardAppeared ? 1 : 0)
@@ -56,11 +57,12 @@ struct GameOverView: View {
             Text(winnerEmoji)
                 .font(.system(size: 52))
             Text(winnerTitle)
-                .font(.system(size: 28, weight: .bold, design: .rounded))
+                .font(.system(size: 30, weight: .bold, design: .rounded))
+                .foregroundStyle(Color.appNavy)
             if let winner = state.winner {
                 Text("\(winner.displayName) wins!")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                    .font(.system(size: 15))
+                    .foregroundStyle(Color.navyLight)
             }
         }
     }
@@ -68,23 +70,24 @@ struct GameOverView: View {
     private var scoreTable: some View {
         HStack(spacing: 0) {
             ForEach(state.players) { player in
+                let isWinner = player.id == state.winner?.id
                 VStack(spacing: 6) {
                     Text(player.displayName)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+                        .font(.system(size: 13))
+                        .foregroundStyle(Color.navyLight)
                     Text("\(player.matchedPairCount)")
-                        .font(.system(size: 40, weight: .bold, design: .rounded))
-                        .foregroundStyle(player.id == state.winner?.id ? .primary : .secondary)
+                        .font(.system(size: 48, weight: .bold, design: .rounded))
+                        .foregroundStyle(isWinner ? Color.appNavy : Color.creamDark)
                     Text("pairs")
-                        .font(.caption2)
-                        .foregroundStyle(.secondary)
+                        .font(.system(size: 13))
+                        .foregroundStyle(Color.navyLight)
                 }
                 .frame(maxWidth: .infinity)
 
                 if player.id == 1 {
                     Text("vs")
-                        .font(.caption)
-                        .foregroundStyle(.tertiary)
+                        .font(.system(size: 13))
+                        .foregroundStyle(Color.creamDark)
                 }
             }
         }
@@ -96,8 +99,8 @@ struct GameOverView: View {
             Spacer()
             Label(formattedTime, systemImage: "clock")
         }
-        .font(.subheadline)
-        .foregroundStyle(.secondary)
+        .font(.system(size: 15))
+        .foregroundStyle(Color.navyLight)
     }
 
     private var actionButtons: some View {
@@ -107,12 +110,12 @@ struct GameOverView: View {
                 onPlayAgain()
             } label: {
                 Text("Play Again")
-                    .font(.headline)
+                    .font(.system(size: 20, weight: .semibold, design: .rounded))
                     .frame(maxWidth: .infinity)
-                    .padding(.vertical, 14)
-                    .background(.white)
-                    .foregroundStyle(Color(hue: 0.62, saturation: 0.6, brightness: 0.3))
-                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                    .padding(.vertical, 16)
+                    .background(Color.white)
+                    .foregroundStyle(Color.coral)
+                    .clipShape(Capsule())
             }
 
             Button {
@@ -120,41 +123,24 @@ struct GameOverView: View {
                 onHome()
             } label: {
                 Text("Home")
-                    .font(.headline)
+                    .font(.system(size: 20, weight: .semibold, design: .rounded))
                     .frame(maxWidth: .infinity)
-                    .padding(.vertical, 14)
-                    .background(.white.opacity(0.15))
+                    .padding(.vertical, 16)
+                    .background(Color.white.opacity(0.20))
                     .foregroundStyle(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                    .clipShape(Capsule())
             }
         }
-        .padding(.horizontal, 32)
-        .padding(.bottom, 50)
+        .padding(.horizontal, 40)
+        .padding(.bottom, 60)
     }
 
-    private var winnerEmoji: String {
-        state.winner != nil ? "🏆" : "🤝"
-    }
-
-    private var winnerTitle: String {
-        state.winner != nil ? "We have a winner!" : "It's a tie!"
-    }
+    private var winnerEmoji: String { state.winner != nil ? "🏆" : "🤝" }
+    private var winnerTitle: String { state.winner != nil ? "We have a winner!" : "It's a tie!" }
 
     private var formattedTime: String {
         let m = elapsedSeconds / 60
         let s = elapsedSeconds % 60
         return String(format: "%02d:%02d", m, s)
-    }
-
-    private var backgroundGradient: some View {
-        LinearGradient(
-            colors: [
-                Color(hue: 0.62, saturation: 0.55, brightness: 0.3),
-                Color(hue: 0.67, saturation: 0.6, brightness: 0.2)
-            ],
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-        )
-        .ignoresSafeArea()
     }
 }

@@ -6,24 +6,26 @@ struct HomeView: View {
     var body: some View {
         NavigationStack(path: $env.navigationPath) {
             ZStack {
-                backgroundGradient
+                LinearGradient(
+                    colors: [Color.cream, Color(hex: "#fde8d0")],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .ignoresSafeArea()
 
                 VStack(spacing: 40) {
                     Spacer()
 
-                    VStack(spacing: 12) {
-                        Image(systemName: "music.note.list")
-                            .font(.system(size: 64))
-                            .foregroundStyle(.white)
-                            .shadow(radius: 8)
+                    VStack(spacing: 16) {
+                        SoundWaveVisualiser()
 
                         Text("Ohrenspiel")
-                            .font(.system(size: 38, weight: .bold, design: .rounded))
-                            .foregroundStyle(.white)
+                            .font(.system(size: 40, weight: .bold, design: .rounded))
+                            .foregroundStyle(Color.appNavy)
 
                         Text("Match the sounds")
                             .font(.title3)
-                            .foregroundStyle(.white.opacity(0.75))
+                            .foregroundStyle(Color.navyLight)
                     }
 
                     Spacer()
@@ -32,12 +34,13 @@ struct HomeView: View {
                         env.navigationPath.append(Route.theme)
                     } label: {
                         Text("Play")
-                            .font(.title2.bold())
+                            .font(.system(size: 20, weight: .semibold, design: .rounded))
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 16)
-                            .background(.white)
-                            .foregroundStyle(Color(hue: 0.62, saturation: 0.6, brightness: 0.35))
-                            .clipShape(RoundedRectangle(cornerRadius: 16))
+                            .background(Color.coral)
+                            .foregroundStyle(.white)
+                            .clipShape(Capsule())
+                            .shadow(color: Color.coral.opacity(0.35), radius: 6, x: 0, y: 4)
                     }
                     .padding(.horizontal, 40)
                     .padding(.bottom, 60)
@@ -55,17 +58,20 @@ struct HomeView: View {
             }
         }
     }
+}
 
-    private var backgroundGradient: some View {
-        LinearGradient(
-            colors: [
-                Color(hue: 0.62, saturation: 0.55, brightness: 0.45),
-                Color(hue: 0.67, saturation: 0.6, brightness: 0.35)
-            ],
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-        )
-        .ignoresSafeArea()
+private struct SoundWaveVisualiser: View {
+    private let heights: [CGFloat] = [18, 32, 48, 60, 48, 32, 18]
+    private let colors: [Color] = [.sky, .sage, .coral, .gold, .coral, .sage, .sky]
+
+    var body: some View {
+        HStack(spacing: 5) {
+            ForEach(0..<7, id: \.self) { i in
+                RoundedRectangle(cornerRadius: 99)
+                    .fill(colors[i])
+                    .frame(width: 6, height: heights[i])
+            }
+        }
     }
 }
 

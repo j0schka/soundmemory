@@ -5,15 +5,22 @@ struct ThemeView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 16) {
+            VStack(alignment: .leading, spacing: 16) {
+                Text("What do you want to hear?")
+                    .font(.system(size: 24, weight: .semibold, design: .rounded))
+                    .foregroundStyle(Color.appNavy)
+                    .padding(.top, 8)
+
                 ForEach(SoundTheme.allCases) { theme in
                     ThemeCard(theme: theme) {
                         env.navigationPath.append(Route.difficulty(theme))
                     }
                 }
             }
-            .padding()
+            .padding(.horizontal, 16)
+            .padding(.bottom, 16)
         }
+        .background(Color.cream.ignoresSafeArea())
         .navigationTitle("Choose Theme")
         .navigationBarTitleDisplayMode(.inline)
     }
@@ -25,24 +32,24 @@ private struct ThemeCard: View {
 
     var body: some View {
         Button(action: action) {
-            HStack(spacing: 20) {
+            HStack(spacing: 16) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 14)
-                        .fill(iconBackground)
-                        .frame(width: 64, height: 64)
+                        .fill(iconBoxBackground)
+                        .frame(width: 56, height: 56)
                     Image(systemName: theme.icon)
-                        .font(.system(size: 28))
-                        .foregroundStyle(.white)
+                        .font(.system(size: 24))
+                        .foregroundStyle(iconColor)
                 }
 
                 VStack(alignment: .leading, spacing: 6) {
                     Text(theme.displayName)
-                        .font(.headline)
-                        .foregroundStyle(.primary)
+                        .font(.system(size: 17, weight: .semibold))
+                        .foregroundStyle(Color.appNavy)
 
                     Text(theme.description)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+                        .font(.system(size: 15))
+                        .foregroundStyle(Color.navyLight)
                         .fixedSize(horizontal: false, vertical: true)
 
                     soundPills
@@ -52,11 +59,13 @@ private struct ThemeCard: View {
 
                 Image(systemName: "chevron.right")
                     .font(.system(size: 14, weight: .semibold))
-                    .foregroundStyle(.tertiary)
+                    .foregroundStyle(Color.creamDark)
             }
             .padding(16)
-            .background(.regularMaterial)
+            .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 18))
+            .shadow(color: Color.appNavy.opacity(0.10), radius: 8, x: 0, y: 4)
+            .shadow(color: Color.appNavy.opacity(0.06), radius: 2, x: 0, y: 1)
         }
         .buttonStyle(.plain)
     }
@@ -66,24 +75,32 @@ private struct ThemeCard: View {
         return HStack(spacing: 6) {
             ForEach(names, id: \.self) { name in
                 Text(name)
-                    .font(.system(size: 10, weight: .medium))
-                    .padding(.horizontal, 7)
-                    .padding(.vertical, 3)
-                    .background(iconBackground.opacity(0.15))
-                    .foregroundStyle(iconBackground)
+                    .font(.system(size: 11, weight: .medium))
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(iconColor.opacity(0.12))
+                    .foregroundStyle(iconColor)
                     .clipShape(Capsule())
             }
             Text("…")
-                .font(.system(size: 10, weight: .medium))
-                .foregroundStyle(.tertiary)
+                .font(.system(size: 11, weight: .medium))
+                .foregroundStyle(Color.muted)
         }
     }
 
-    private var iconBackground: Color {
+    private var iconBoxBackground: Color {
         switch theme {
-        case .musical: return Color(hue: 0.67, saturation: 0.6, brightness: 0.7)
-        case .city:    return Color(hue: 0.08, saturation: 0.75, brightness: 0.75)
-        case .animals: return Color(hue: 0.35, saturation: 0.6, brightness: 0.55)
+        case .musical: return Color.skyLight
+        case .city:    return Color.tanLight
+        case .animals: return Color.sageLight
+        }
+    }
+
+    private var iconColor: Color {
+        switch theme {
+        case .musical: return Color.sky
+        case .city:    return Color.tangerine
+        case .animals: return Color.sage
         }
     }
 }

@@ -8,7 +8,22 @@ struct PassView: View {
 
     var body: some View {
         ZStack {
-            Color(hue: 0.62, saturation: 0.6, brightness: 0.15)
+            background
+
+            Circle()
+                .fill(Color.coral.opacity(0.12))
+                .frame(width: 140, height: 140)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                .padding(.trailing, -30)
+                .padding(.top, 60)
+                .ignoresSafeArea()
+
+            Circle()
+                .fill(Color.gold.opacity(0.15))
+                .frame(width: 90, height: 90)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+                .padding(.leading, -20)
+                .padding(.bottom, 120)
                 .ignoresSafeArea()
 
             VStack(spacing: 32) {
@@ -22,7 +37,7 @@ struct PassView: View {
 
                 VStack(spacing: 8) {
                     Text("Pass the device")
-                        .font(.title3)
+                        .font(.system(size: 17, weight: .semibold))
                         .foregroundStyle(.white.opacity(0.7))
 
                     Text("to \(currentPlayer.displayName)")
@@ -36,12 +51,12 @@ struct PassView: View {
 
                 Button(action: onReady) {
                     Text("I'm Ready")
-                        .font(.title3.bold())
+                        .font(.system(size: 20, weight: .semibold, design: .rounded))
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 16)
-                        .background(.white)
-                        .foregroundStyle(Color(hue: 0.62, saturation: 0.6, brightness: 0.25))
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                        .background(Color.white)
+                        .foregroundStyle(Color.coral)
+                        .clipShape(Capsule())
                 }
                 .padding(.horizontal, 40)
                 .padding(.bottom, 60)
@@ -51,6 +66,24 @@ struct PassView: View {
         }
         .onAppear { appeared = true }
         .onDisappear { appeared = false }
+    }
+
+    private var background: some View {
+        ZStack {
+            Color.appNavy.ignoresSafeArea()
+            Canvas { context, size in
+                let spacing: CGFloat = 18
+                for x in stride(from: 0, to: size.width, by: spacing) {
+                    for y in stride(from: 0, to: size.height, by: spacing) {
+                        context.fill(
+                            Path(ellipseIn: CGRect(x: x, y: y, width: 3, height: 3)),
+                            with: .color(.white.opacity(0.06))
+                        )
+                    }
+                }
+            }
+            .ignoresSafeArea()
+        }
     }
 }
 

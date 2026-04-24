@@ -33,6 +33,7 @@ struct GameView: View {
             Spacer(minLength: 0)
         }
         .padding(.vertical)
+        .background(Color.cream.ignoresSafeArea())
         .navigationTitle("\(theme.displayName) · \(difficulty.displayName)")
         .navigationBarTitleDisplayMode(.inline)
         .fullScreenCover(isPresented: $vm.showPassScreen) {
