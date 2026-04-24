@@ -2,6 +2,7 @@ import SwiftUI
 
 struct DifficultyView: View {
     let theme: SoundTheme
+    let playerMode: PlayerMode
     @EnvironmentObject private var env: AppEnvironment
 
     var body: some View {
@@ -13,7 +14,7 @@ struct DifficultyView: View {
 
             ForEach(Difficulty.allCases) { difficulty in
                 DifficultyButton(difficulty: difficulty) {
-                    env.navigationPath.append(Route.game(difficulty, theme))
+                    env.navigationPath.append(Route.game(difficulty, theme, playerMode))
                 }
             }
 
@@ -92,6 +93,6 @@ private struct DifficultyButton: View {
 
 #Preview {
     NavigationStack {
-        DifficultyView(theme: .city).environmentObject(AppEnvironment())
+        DifficultyView(theme: .city, playerMode: .versus).environmentObject(AppEnvironment())
     }
 }

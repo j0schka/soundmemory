@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ThemeView: View {
+    let playerMode: PlayerMode
     @EnvironmentObject private var env: AppEnvironment
 
     var body: some View {
@@ -13,7 +14,7 @@ struct ThemeView: View {
 
                 ForEach(SoundTheme.allCases) { theme in
                     ThemeCard(theme: theme) {
-                        env.navigationPath.append(Route.difficulty(theme))
+                        env.navigationPath.append(Route.difficulty(theme, playerMode))
                     }
                 }
             }
@@ -107,6 +108,6 @@ private struct ThemeCard: View {
 
 #Preview {
     NavigationStack {
-        ThemeView().environmentObject(AppEnvironment())
+        ThemeView(playerMode: .versus).environmentObject(AppEnvironment())
     }
 }

@@ -3,13 +3,15 @@ import SwiftUI
 struct GameView: View {
     let difficulty: Difficulty
     let theme: SoundTheme
+    let playerMode: PlayerMode
     @EnvironmentObject private var env: AppEnvironment
     @StateObject private var vm: GameViewModel
 
-    init(difficulty: Difficulty, theme: SoundTheme, audio: AudioEngine) {
+    init(difficulty: Difficulty, theme: SoundTheme, playerMode: PlayerMode, audio: AudioEngine) {
         self.difficulty = difficulty
         self.theme = theme
-        _vm = StateObject(wrappedValue: GameViewModel(difficulty: difficulty, theme: theme, audio: audio))
+        self.playerMode = playerMode
+        _vm = StateObject(wrappedValue: GameViewModel(difficulty: difficulty, theme: theme, playerMode: playerMode, audio: audio))
     }
 
     var body: some View {
@@ -18,7 +20,8 @@ struct GameView: View {
                 players: vm.state.players,
                 currentPlayerIndex: vm.state.currentPlayerIndex,
                 moves: vm.state.totalMoves,
-                timerString: vm.timer.displayString
+                timerString: vm.timer.displayString,
+                playerMode: playerMode
             )
 
             Spacer(minLength: 0)

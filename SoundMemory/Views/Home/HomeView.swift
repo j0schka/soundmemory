@@ -30,10 +30,30 @@ struct HomeView: View {
 
                     Spacer()
 
-                    Button {
-                        env.navigationPath.append(Route.theme)
-                    } label: {
-                        Text("Play")
+                    VStack(spacing: 12) {
+                        Button {
+                            env.navigationPath.append(Route.theme(.single))
+                        } label: {
+                            HStack(spacing: 8) {
+                                Image(systemName: "person.fill")
+                                Text("Solo")
+                            }
+                            .font(.system(size: 20, weight: .semibold, design: .rounded))
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 16)
+                            .background(Color.sage)
+                            .foregroundStyle(.white)
+                            .clipShape(Capsule())
+                            .shadow(color: Color.sage.opacity(0.35), radius: 6, x: 0, y: 4)
+                        }
+
+                        Button {
+                            env.navigationPath.append(Route.theme(.versus))
+                        } label: {
+                            HStack(spacing: 8) {
+                                Image(systemName: "person.2.fill")
+                                Text("2 Players")
+                            }
                             .font(.system(size: 20, weight: .semibold, design: .rounded))
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 16)
@@ -41,6 +61,7 @@ struct HomeView: View {
                             .foregroundStyle(.white)
                             .clipShape(Capsule())
                             .shadow(color: Color.coral.opacity(0.35), radius: 6, x: 0, y: 4)
+                        }
                     }
                     .padding(.horizontal, 40)
                     .padding(.bottom, 60)
@@ -48,12 +69,12 @@ struct HomeView: View {
             }
             .navigationDestination(for: Route.self) { route in
                 switch route {
-                case .theme:
-                    ThemeView()
-                case .difficulty(let theme):
-                    DifficultyView(theme: theme)
-                case .game(let difficulty, let theme):
-                    GameView(difficulty: difficulty, theme: theme, audio: env.audio)
+                case .theme(let mode):
+                    ThemeView(playerMode: mode)
+                case .difficulty(let theme, let mode):
+                    DifficultyView(theme: theme, playerMode: mode)
+                case .game(let difficulty, let theme, let mode):
+                    GameView(difficulty: difficulty, theme: theme, playerMode: mode, audio: env.audio)
                 }
             }
         }

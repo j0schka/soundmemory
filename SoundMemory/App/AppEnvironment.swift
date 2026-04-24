@@ -1,9 +1,9 @@
 import SwiftUI
 
 enum Route: Hashable {
-    case theme
-    case difficulty(SoundTheme)
-    case game(Difficulty, SoundTheme)
+    case theme(PlayerMode)
+    case difficulty(SoundTheme, PlayerMode)
+    case game(Difficulty, SoundTheme, PlayerMode)
 }
 
 @MainActor

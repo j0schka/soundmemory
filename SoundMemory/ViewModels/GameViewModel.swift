@@ -12,13 +12,17 @@ final class GameViewModel: ObservableObject {
     private var matchCheckTask: Task<Void, Never>?
     private var timerStarted = false
 
-    init(difficulty: Difficulty, theme: SoundTheme, audio: AudioEngine) {
+    init(difficulty: Difficulty, theme: SoundTheme, playerMode: PlayerMode, audio: AudioEngine) {
         self.audio = audio
+        let players: [Player] = playerMode == .single
+            ? [Player(id: 1)]
+            : [Player(id: 1), Player(id: 2)]
         self.state = GameState(
             cards: Card.shuffledDeck(for: difficulty),
-            players: [Player(id: 1), Player(id: 2)],
+            players: players,
             difficulty: difficulty,
-            theme: theme
+            theme: theme,
+            playerMode: playerMode
         )
         audio.preloadTones(theme.tones(for: difficulty))
     }
@@ -66,11 +70,16 @@ final class GameViewModel: ObservableObject {
         lastMatchedIDs = []
         let difficulty = state.difficulty
         let theme = state.theme
+        let playerMode = state.playerMode
+        let players: [Player] = playerMode == .single
+            ? [Player(id: 1)]
+            : [Player(id: 1), Player(id: 2)]
         state = GameState(
             cards: Card.shuffledDeck(for: difficulty),
-            players: [Player(id: 1), Player(id: 2)],
+            players: players,
             difficulty: difficulty,
-            theme: theme
+            theme: theme,
+            playerMode: playerMode
         )
         audio.preloadTones(theme.tones(for: difficulty))
     }
@@ -113,10 +122,15 @@ final class GameViewModel: ObservableObject {
             try? await Task.sleep(for: .milliseconds(1200))
             state.setFaceUp(false, cardID: firstID)
             state.setFaceUp(false, cardID: secondID)
-            state.currentPlayerIndex = state.currentPlayerIndex == 0 ? 1 : 0
-            state.phase = .passScreen
-            timer.pause()
-            showPassScreen = true
+
+            if state.playerMode == .versus {
+                state.currentPlayerIndex = state.currentPlayerIndex == 0 ? 1 : 0
+                state.phase = .passScreen
+                timer.pause()
+                showPassScreen = true
+            } else {
+                state.phase = .idle
+            }
         }
     }
 }

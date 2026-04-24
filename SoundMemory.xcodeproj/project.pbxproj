@@ -29,6 +29,7 @@
 		922F15B9833CF06F8C60F49E /* animal_duck.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B62A86973A130A1B6E997651 /* animal_duck.mp3 */; };
 		938874DB06FEDB37A4438F09 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EFA3C58FE4B6DB6729FBC6 /* GameViewModel.swift */; };
 		9D6CAD097A9F852E96F4C1F8 /* animal_owl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DAF478B066F8EDCE03D3BF9C /* animal_owl.mp3 */; };
+		ABD6CF2C5BCB29C27528CFCC /* PlayerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB4A34426F37D6DD25A9AB3 /* PlayerMode.swift */; };
 		B1FFA2D9D7B502730922A812 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359EDFA4423B00509EA9A42 /* GameOverView.swift */; };
 		B4D4D05427162F0439D13223 /* Color+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F08CEBEA7E44CDD41567A /* Color+Design.swift */; };
 		BDCEBE71B7B0505CD87111D7 /* ToneGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E77322169212F8B728D75F4 /* ToneGenerator.swift */; };
@@ -78,6 +79,7 @@
 		5AB5D44C363F57AEEB2C195D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5F6F08CEBEA7E44CDD41567A /* Color+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Design.swift"; sourceTree = "<group>"; };
 		6A38E6BB01424417574CB240 /* animal_lion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_lion.mp3; sourceTree = "<group>"; };
+		6AB4A34426F37D6DD25A9AB3 /* PlayerMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMode.swift; sourceTree = "<group>"; };
 		785072D625788B1203CFA3AA /* animal_cow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_cow.mp3; sourceTree = "<group>"; };
 		7989D7DB1C723FF7A834536C /* SoundMemoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundMemoryTests.swift; sourceTree = "<group>"; };
 		7B648E5874337817EE95F6F0 /* SynthConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthConfig.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				EF60542A58056D8DF6F93A91 /* Difficulty.swift */,
 				B44F5C6A1841BFC7CD34D3A2 /* GameState.swift */,
 				487FDF326E43F88D46EBB055 /* Player.swift */,
+				6AB4A34426F37D6DD25A9AB3 /* PlayerMode.swift */,
 				54F3C96BEFD8F1AA874F9754 /* SoundTheme.swift */,
 				C3B7987DB6B4F6AF7B418C39 /* SoundTone.swift */,
 			);
@@ -412,6 +415,7 @@
 				498F0758C6DA2F45056A4FCD /* HomeView.swift in Sources */,
 				EB9AE63BE0928B2703EDE40D /* PassView.swift in Sources */,
 				52E94C979031DE2FD76FC743 /* Player.swift in Sources */,
+				ABD6CF2C5BCB29C27528CFCC /* PlayerMode.swift in Sources */,
 				ED5CA1EF5042589CC692BAE7 /* PulseModifier.swift in Sources */,
 				BEBA61919BEB9235FA67A7A1 /* ScoreBarView.swift in Sources */,
 				2B84C645C80DCA6E957BCE46 /* SoundMemoryApp.swift in Sources */,

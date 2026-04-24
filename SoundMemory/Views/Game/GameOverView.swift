@@ -24,11 +24,11 @@ struct GameOverView: View {
                 Spacer()
 
                 VStack(spacing: 24) {
-                    resultHeader
-                    Divider().background(Color.creamDark)
-                    scoreTable
-                    Divider().background(Color.creamDark)
-                    timeRow
+                    if state.playerMode == .single {
+                        singlePlayerResult
+                    } else {
+                        versusResult
+                    }
                 }
                 .padding(24)
                 .background(Color.white.opacity(0.92))
@@ -52,56 +52,96 @@ struct GameOverView: View {
         }
     }
 
-    private var resultHeader: some View {
-        VStack(spacing: 8) {
-            Text(winnerEmoji)
-                .font(.system(size: 52))
-            Text(winnerTitle)
-                .font(.system(size: 30, weight: .bold, design: .rounded))
+    // MARK: - Single player result
+
+    private var singlePlayerResult: some View {
+        VStack(spacing: 24) {
+            VStack(spacing: 8) {
+                Text("🎉")
+                    .font(.system(size: 52))
+                Text("Well done!")
+                    .font(.system(size: 30, weight: .bold, design: .rounded))
+                    .foregroundStyle(Color.appNavy)
+            }
+
+            Divider().background(Color.creamDark)
+
+            HStack(spacing: 0) {
+                statCell(value: "\(state.totalMoves)", label: "moves")
+                Divider().frame(height: 44).background(Color.creamDark)
+                statCell(value: formattedTime, label: "time")
+            }
+        }
+    }
+
+    private func statCell(value: String, label: String) -> some View {
+        VStack(spacing: 4) {
+            Text(value)
+                .font(.system(size: 34, weight: .bold, design: .rounded))
                 .foregroundStyle(Color.appNavy)
-            if let winner = state.winner {
-                Text("\(winner.displayName) wins!")
-                    .font(.system(size: 15))
-                    .foregroundStyle(Color.navyLight)
-            }
+            Text(label)
+                .font(.system(size: 13))
+                .foregroundStyle(Color.navyLight)
         }
+        .frame(maxWidth: .infinity)
     }
 
-    private var scoreTable: some View {
-        HStack(spacing: 0) {
-            ForEach(state.players) { player in
-                let isWinner = player.id == state.winner?.id
-                VStack(spacing: 6) {
-                    Text(player.displayName)
-                        .font(.system(size: 13))
-                        .foregroundStyle(Color.navyLight)
-                    Text("\(player.matchedPairCount)")
-                        .font(.system(size: 48, weight: .bold, design: .rounded))
-                        .foregroundStyle(isWinner ? Color.appNavy : Color.creamDark)
-                    Text("pairs")
-                        .font(.system(size: 13))
+    // MARK: - Versus result
+
+    private var versusResult: some View {
+        VStack(spacing: 24) {
+            VStack(spacing: 8) {
+                Text(winnerEmoji)
+                    .font(.system(size: 52))
+                Text(winnerTitle)
+                    .font(.system(size: 30, weight: .bold, design: .rounded))
+                    .foregroundStyle(Color.appNavy)
+                if let winner = state.winner {
+                    Text("\(winner.displayName) wins!")
+                        .font(.system(size: 15))
                         .foregroundStyle(Color.navyLight)
                 }
-                .frame(maxWidth: .infinity)
+            }
 
-                if player.id == 1 {
-                    Text("vs")
-                        .font(.system(size: 13))
-                        .foregroundStyle(Color.creamDark)
+            Divider().background(Color.creamDark)
+
+            HStack(spacing: 0) {
+                ForEach(state.players) { player in
+                    let isWinner = player.id == state.winner?.id
+                    VStack(spacing: 6) {
+                        Text(player.displayName)
+                            .font(.system(size: 13))
+                            .foregroundStyle(Color.navyLight)
+                        Text("\(player.matchedPairCount)")
+                            .font(.system(size: 48, weight: .bold, design: .rounded))
+                            .foregroundStyle(isWinner ? Color.appNavy : Color.creamDark)
+                        Text("pairs")
+                            .font(.system(size: 13))
+                            .foregroundStyle(Color.navyLight)
+                    }
+                    .frame(maxWidth: .infinity)
+
+                    if player.id == 1 {
+                        Text("vs")
+                            .font(.system(size: 13))
+                            .foregroundStyle(Color.creamDark)
+                    }
                 }
             }
+
+            Divider().background(Color.creamDark)
+
+            HStack {
+                Label("\(state.totalMoves) moves", systemImage: "hand.tap")
+                Spacer()
+                Label(formattedTime, systemImage: "clock")
+            }
+            .font(.system(size: 15))
+            .foregroundStyle(Color.navyLight)
         }
     }
 
-    private var timeRow: some View {
-        HStack {
-            Label("\(state.totalMoves) moves", systemImage: "hand.tap")
-            Spacer()
-            Label(formattedTime, systemImage: "clock")
-        }
-        .font(.system(size: 15))
-        .foregroundStyle(Color.navyLight)
-    }
+    // MARK: - Shared
 
     private var actionButtons: some View {
         VStack(spacing: 12) {

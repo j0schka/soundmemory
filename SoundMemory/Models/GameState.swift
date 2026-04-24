@@ -17,12 +17,14 @@ struct GameState {
     var totalMoves: Int = 0
     var difficulty: Difficulty
     var theme: SoundTheme
+    var playerMode: PlayerMode
 
     var currentPlayer: Player { players[currentPlayerIndex] }
 
     var isGameOver: Bool { cards.allSatisfy(\.isMatched) }
 
     var winner: Player? {
+        guard playerMode == .versus else { return nil }
         guard players[0].matchedPairCount != players[1].matchedPairCount else { return nil }
         return players.max(by: { $0.matchedPairCount < $1.matchedPairCount })
     }
