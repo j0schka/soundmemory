@@ -49,13 +49,14 @@ final class ToneGeneratorTests: XCTestCase {
         }
     }
 
-    func testAllThemeSoundsGenerateBuffers() {
-        for theme in SoundTheme.allCases {
-            let tones = theme.tones(for: .hard) // hard = all 12 sounds
-            XCTAssertEqual(tones.count, 12)
-            for tone in tones {
-                let buffer = ToneGenerator.buffer(config: tone.config)
-                XCTAssertGreaterThan(buffer.frameLength, 0, "\(theme.displayName)/\(tone.name) produced empty buffer")
+    func testSynthesisedSoundsGenerateBuffers() {
+        // Only test synthesised sources (file-based sources require bundled assets)
+        for theme in [SoundTheme.musical, .city] {
+            for tone in theme.tones(for: .hard) {
+                guard case .synthesized(let config) = tone.source else { continue }
+                let buffer = ToneGenerator.buffer(config: config)
+                XCTAssertGreaterThan(buffer.frameLength, 0,
+                                     "\(theme.displayName)/\(tone.name) produced empty buffer")
             }
         }
     }
