@@ -2,6 +2,9 @@ import AVFoundation
 
 @MainActor
 final class AudioEngine {
+    // Single format used for every player node — keeps the engine graph uniform
+    static let standardFormat = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 1)!
+
     private let engine = AVAudioEngine()
     private var playerNodes: [Int: AVAudioPlayerNode] = [:]
     private var cachedBuffers: [Int: AVAudioPCMBuffer] = [:]
@@ -13,8 +16,6 @@ final class AudioEngine {
     }
 
     func preloadTones(_ tones: [SoundTone]) {
-        // Detach old nodes without stopping the engine — detach auto-disconnects them,
-        // and stopping the running engine causes AudioObjectRemovePropertyListener warnings.
         for node in playerNodes.values { node.stop(); engine.detach(node) }
         playerNodes.removeAll()
         cachedBuffers.removeAll()
@@ -25,14 +26,13 @@ final class AudioEngine {
                 continue
             }
             cachedBuffers[tone.id] = buffer
-
             let node = AVAudioPlayerNode()
             engine.attach(node)
-            engine.connect(node, to: mixer, format: buffer.format)
+            // All nodes use the same format — no mixed-format graph issues
+            engine.connect(node, to: mixer, format: Self.standardFormat)
             playerNodes[tone.id] = node
         }
 
-        // Start once; keep running for subsequent preloads
         if !engine.isRunning { startEngine() }
     }
 
@@ -63,14 +63,40 @@ final class AudioEngine {
         let extensions = ["mp3", "caf", "wav", "m4a"]
         guard let url = extensions.lazy.compactMap({
             Bundle.main.url(forResource: name, withExtension: $0)
-        }).first else { return nil }
+        }).first else {
+            print("AudioEngine: '\(name)' not found in bundle")
+            return nil
+        }
 
         guard let audioFile = try? AVAudioFile(forReading: url) else { return nil }
-        let buffer = AVAudioPCMBuffer(pcmFormat: audioFile.processingFormat,
-                                      frameCapacity: AVAudioFrameCount(audioFile.length))
-        guard let buffer else { return nil }
-        try? audioFile.read(into: buffer)
-        return buffer
+
+        // Read the file in its native format first
+        let fileFormat = audioFile.processingFormat
+        let frameCount = AVAudioFrameCount(audioFile.length)
+        guard let fileBuffer = AVAudioPCMBuffer(pcmFormat: fileFormat, frameCapacity: frameCount) else { return nil }
+        guard (try? audioFile.read(into: fileBuffer)) != nil else { return nil }
+
+        // If already in standard format, use directly
+        if fileFormat == Self.standardFormat { return fileBuffer }
+
+        // Otherwise convert to standard format so all nodes share one format
+        guard let converter = AVAudioConverter(from: fileFormat, to: Self.standardFormat) else { return nil }
+        let outputCapacity = AVAudioFrameCount(
+            Double(frameCount) * Self.standardFormat.sampleRate / fileFormat.sampleRate
+        )
+        guard let outputBuffer = AVAudioPCMBuffer(pcmFormat: Self.standardFormat,
+                                                  frameCapacity: outputCapacity) else { return nil }
+        var inputConsumed = false
+        let status = converter.convert(to: outputBuffer, error: nil) { _, outStatus in
+            if inputConsumed {
+                outStatus.pointee = .endOfStream
+                return nil
+            }
+            inputConsumed = true
+            outStatus.pointee = .haveData
+            return fileBuffer
+        }
+        return status != .error ? outputBuffer : nil
     }
 
     private func startEngine() {
