@@ -44,7 +44,7 @@ private struct CardFrontFace: View {
 
     var body: some View {
         RoundedRectangle(cornerRadius: Constants.cardCornerRadius)
-            .fill(Constants.color(for: toneID).opacity(isMatched ? 0.5 : 1.0))
+            .fill(Color(hue: 0.62, saturation: 0.5, brightness: 0.55).opacity(isMatched ? 0.45 : 1.0))
             .overlay {
                 VStack(spacing: 6) {
                     Image(systemName: isMatched ? "checkmark.circle.fill" : "music.note")
