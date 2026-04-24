@@ -17,7 +17,7 @@ struct HomeView: View {
                             .foregroundStyle(.white)
                             .shadow(radius: 8)
 
-                        Text("SoundMemory")
+                        Text("Ohrenspiel")
                             .font(.system(size: 38, weight: .bold, design: .rounded))
                             .foregroundStyle(.white)
 
