@@ -13,26 +13,27 @@ final class AudioEngine {
     }
 
     func preloadTones(_ tones: [SoundTone]) {
-        engine.stop()
+        // Detach old nodes without stopping the engine — detach auto-disconnects them,
+        // and stopping the running engine causes AudioObjectRemovePropertyListener warnings.
         for node in playerNodes.values { node.stop(); engine.detach(node) }
         playerNodes.removeAll()
         cachedBuffers.removeAll()
 
         for tone in tones {
             guard let buffer = loadBuffer(for: tone) else {
-                print("AudioEngine: missing audio for '\(tone.name)' (id \(tone.id))")
+                print("AudioEngine: no audio for '\(tone.name)' (id \(tone.id))")
                 continue
             }
             cachedBuffers[tone.id] = buffer
 
             let node = AVAudioPlayerNode()
             engine.attach(node)
-            // Connect with the buffer's own format so there is never a mismatch
             engine.connect(node, to: mixer, format: buffer.format)
             playerNodes[tone.id] = node
         }
 
-        startEngine()
+        // Start once; keep running for subsequent preloads
+        if !engine.isRunning { startEngine() }
     }
 
     func play(toneID: Int) {
