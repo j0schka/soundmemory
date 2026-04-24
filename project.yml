@@ -25,21 +25,20 @@ targets:
       - path: SoundMemory
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.soundmemory.SoundMemory
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.j0schka.ohrenspiel
         INFOPLIST_FILE: SoundMemory/Info.plist
         CODE_SIGN_STYLE: Automatic
         DEVELOPMENT_TEAM: ""
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     info:
       path: SoundMemory/Info.plist
       properties:
-        CFBundleDisplayName: SoundMemory
+        CFBundleDisplayName: Ohrenspiel
         CFBundleShortVersionString: "1.0"
         CFBundleVersion: "1"
+        CFBundleIconName: AppIcon
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
-        UISupportedInterfaceOrientations~ipad:
-          - UIInterfaceOrientationPortrait
-          - UIInterfaceOrientationPortraitUpsideDown
         UILaunchScreen:
           UIColorName: ""
           UIImageName: ""
@@ -56,5 +55,5 @@ targets:
       - target: SoundMemory
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.soundmemory.SoundMemoryTests
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.j0schka.ohrenspiel.tests
         TEST_HOST: $(BUILT_PRODUCTS_DIR)/SoundMemory.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SoundMemory

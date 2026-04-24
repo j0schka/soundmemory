@@ -17,9 +17,8 @@
 		2B84C645C80DCA6E957BCE46 /* SoundMemoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0063F1C3A840761055D18 /* SoundMemoryApp.swift */; };
 		2F1E033B3AF7AF907CC8A544 /* animal_bee.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C55406A0DC4209B4465975A /* animal_bee.mp3 */; };
 		31660F6367605D9C33C8E1C3 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971493340B6DFD26048C1CB7 /* HapticManager.swift */; };
+		32ACE86D515E608581DB71E2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1751F195FC047BB6BF45B954 /* README.md */; };
 		3641DD58BA707EF4ACF9368D /* DifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E9CD4A24AD5173218F340 /* DifficultyView.swift */; };
-		40BED51C2F9B746D00A6A762 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 40BED51B2F9B746D00A6A762 /* README.md */; };
-		40BED51E2F9B747100A6A762 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 40BED51D2F9B747100A6A762 /* .gitignore */; };
 		498F0758C6DA2F45056A4FCD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1669E27AEC55BFADFAAA49F3 /* HomeView.swift */; };
 		52E94C979031DE2FD76FC743 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487FDF326E43F88D46EBB055 /* Player.swift */; };
 		557281EE25D2F36E2190883B /* SoundTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3C96BEFD8F1AA874F9754 /* SoundTheme.swift */; };
@@ -42,6 +41,7 @@
 		E7CB7E9880A8A1F319D120E8 /* animal_cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 917A4A36908220C98CA6B1FC /* animal_cat.mp3 */; };
 		EABDBE43861D049D2C096DE4 /* animal_horse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9E6D42B178FEF7D5B44469C /* animal_horse.mp3 */; };
 		EB9AE63BE0928B2703EDE40D /* PassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC888DC8757161ADC6D96B4D /* PassView.swift */; };
+		ED4D27925A93C1B1415648E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD28139DAEA495BC2FAE89F0 /* Assets.xcassets */; };
 		ED5CA1EF5042589CC692BAE7 /* PulseModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F2CD1695D1443C2B4E108E /* PulseModifier.swift */; };
 		F4AD31751749F4A62E32E563 /* SynthConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B648E5874337817EE95F6F0 /* SynthConfig.swift */; };
 		F51EF3419FAB160CDFDA3AF2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15CC5D2A5838782466059CB /* CardView.swift */; };
@@ -65,14 +65,13 @@
 		0F5E9CD4A24AD5173218F340 /* DifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyView.swift; sourceTree = "<group>"; };
 		10EFA3C58FE4B6DB6729FBC6 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		1669E27AEC55BFADFAAA49F3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1751F195FC047BB6BF45B954 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1AA6C7E472E997E42439C267 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		2A6808280536BF03552E0C8D /* animal_wolf.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_wolf.mp3; sourceTree = "<group>"; };
 		2B63ED7F57D77306399886DF /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		2C095CC036ED68219AA6909F /* animal_frog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_frog.mp3; sourceTree = "<group>"; };
-		2E3A89F6BEF0C69EA796AFFA /* Ohrenspiel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ohrenspiel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E3A89F6BEF0C69EA796AFFA /* SoundMemory.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SoundMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F51DCC18190920543E94785 /* animal_bird.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_bird.mp3; sourceTree = "<group>"; };
-		40BED51B2F9B746D00A6A762 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		40BED51D2F9B747100A6A762 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		487FDF326E43F88D46EBB055 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		54F3C96BEFD8F1AA874F9754 /* SoundTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTheme.swift; sourceTree = "<group>"; };
 		5AB5D44C363F57AEEB2C195D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -92,6 +91,8 @@
 		A390E3EC1756B60537B807AC /* CardGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGridView.swift; sourceTree = "<group>"; };
 		AAD35DE3F42AF0B8BC3200F5 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		AB04634D8A6455BC16449E96 /* animal_pig.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_pig.mp3; sourceTree = "<group>"; };
+		AD28139DAEA495BC2FAE89F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD759EDF268B49AC0EA4F993 /* .gitignore */ = {isa = PBXFileReference; path = .gitignore; sourceTree = "<group>"; };
 		B44F5C6A1841BFC7CD34D3A2 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		B62A86973A130A1B6E997651 /* animal_duck.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_duck.mp3; sourceTree = "<group>"; };
 		C3B7987DB6B4F6AF7B418C39 /* SoundTone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTone.swift; sourceTree = "<group>"; };
@@ -179,7 +180,7 @@
 		A53301DF087C96CB66AD6B08 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2E3A89F6BEF0C69EA796AFFA /* Ohrenspiel.app */,
+				2E3A89F6BEF0C69EA796AFFA /* SoundMemory.app */,
 				D326B5B647764CA93342C79D /* SoundMemoryTests.xctest */,
 			);
 			name = Products;
@@ -215,6 +216,7 @@
 		DBCAB90CA21505BB197AB421 /* SoundMemory */ = {
 			isa = PBXGroup;
 			children = (
+				AD759EDF268B49AC0EA4F993 /* .gitignore */,
 				9C55406A0DC4209B4465975A /* animal_bee.mp3 */,
 				2F51DCC18190920543E94785 /* animal_bird.mp3 */,
 				917A4A36908220C98CA6B1FC /* animal_cat.mp3 */,
@@ -227,15 +229,15 @@
 				DAF478B066F8EDCE03D3BF9C /* animal_owl.mp3 */,
 				AB04634D8A6455BC16449E96 /* animal_pig.mp3 */,
 				2A6808280536BF03552E0C8D /* animal_wolf.mp3 */,
+				AD28139DAEA495BC2FAE89F0 /* Assets.xcassets */,
 				845781AB0668A5820EE1A400 /* Info.plist */,
+				1751F195FC047BB6BF45B954 /* README.md */,
 				A90CDA43CA961DA00C49D301 /* App */,
 				E6DFEE6AA42D4D826246B4BD /* Audio */,
 				150BFB3C79130BA2E34905E3 /* Models */,
 				787AD4B1A7B89F75404433E8 /* Utilities */,
 				DB84937EDE6B8BA97EBC945C /* ViewModels */,
 				05011C825A993F190F8FF762 /* Views */,
-				40BED51B2F9B746D00A6A762 /* README.md */,
-				40BED51D2F9B747100A6A762 /* .gitignore */,
 			);
 			path = SoundMemory;
 			sourceTree = "<group>";
@@ -296,7 +298,7 @@
 			packageProductDependencies = (
 			);
 			productName = SoundMemory;
-			productReference = 2E3A89F6BEF0C69EA796AFFA /* Ohrenspiel.app */;
+			productReference = 2E3A89F6BEF0C69EA796AFFA /* SoundMemory.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CB2456E21B7D25393988F33C /* SoundMemoryTests */ = {
@@ -357,15 +359,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED4D27925A93C1B1415648E1 /* Assets.xcassets in Resources */,
+				32ACE86D515E608581DB71E2 /* README.md in Resources */,
 				2F1E033B3AF7AF907CC8A544 /* animal_bee.mp3 in Resources */,
 				7A4BD7761F0D73D0187B0662 /* animal_bird.mp3 in Resources */,
 				E7CB7E9880A8A1F319D120E8 /* animal_cat.mp3 in Resources */,
 				2567AFA4CC87B8EA57701325 /* animal_cow.mp3 in Resources */,
-				40BED51C2F9B746D00A6A762 /* README.md in Resources */,
 				C1D7BB5F82C8BD1DBF20EF26 /* animal_dog.mp3 in Resources */,
 				922F15B9833CF06F8C60F49E /* animal_duck.mp3 in Resources */,
 				2B7E2897875F19EDD8D2DE73 /* animal_frog.mp3 in Resources */,
-				40BED51E2F9B747100A6A762 /* .gitignore in Resources */,
 				EABDBE43861D049D2C096DE4 /* animal_horse.mp3 in Resources */,
 				C02025FAE4A3359BAE7E6BC8 /* animal_lion.mp3 in Resources */,
 				9D6CAD097A9F852E96F4C1F8 /* animal_owl.mp3 in Resources */,
@@ -506,7 +508,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.soundmemory.SoundMemoryTests;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.j0schka.ohrenspiel.tests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoundMemory.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SoundMemory";
@@ -525,8 +527,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.soundmemory.SoundMemory;
-				PRODUCT_NAME = Ohrenspiel;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.j0schka.ohrenspiel;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -602,7 +603,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.soundmemory.SoundMemoryTests;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.j0schka.ohrenspiel.tests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoundMemory.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SoundMemory";
@@ -621,8 +622,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.soundmemory.SoundMemory;
-				PRODUCT_NAME = Ohrenspiel;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.j0schka.ohrenspiel;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
