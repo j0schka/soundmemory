@@ -95,6 +95,6 @@ private let animalSounds: [SoundDescriptor] = [
     SoundDescriptor(name: "Horse",   source: .file("animal_horse")),
     SoundDescriptor(name: "Pig",     source: .file("animal_pig")),
     SoundDescriptor(name: "Owl",     source: .file("animal_owl")),
-    SoundDescriptor(name: "Cricket", source: .file("animal_cricket")),
+    SoundDescriptor(name: "Lion",    source: .file("animal_lion")),
     SoundDescriptor(name: "Wolf",    source: .file("animal_wolf")),
 ]
