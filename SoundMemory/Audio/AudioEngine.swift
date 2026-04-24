@@ -2,50 +2,50 @@ import AVFoundation
 
 @MainActor
 final class AudioEngine {
-    // Single format used for every player node — keeps the engine graph uniform
     static let standardFormat = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 1)!
+    private static let nodeCount = 12  // covers Hard difficulty (max 12 pairs)
 
     private let engine = AVAudioEngine()
-    private var playerNodes: [Int: AVAudioPlayerNode] = [:]
+    private var nodes: [AVAudioPlayerNode] = []   // index == toneID
     private var cachedBuffers: [Int: AVAudioPCMBuffer] = [:]
-    private let mixer: AVAudioMixerNode
 
     init() {
-        mixer = engine.mainMixerNode
         configureSession()
+
+        // Build the graph once — never change it again
+        let mixer = engine.mainMixerNode
+        for _ in 0..<Self.nodeCount {
+            let node = AVAudioPlayerNode()
+            engine.attach(node)
+            engine.connect(node, to: mixer, format: Self.standardFormat)
+            nodes.append(node)
+        }
+
+        startEngine()
+
+        // Pre-start all nodes so buffers can be scheduled at any time
+        nodes.forEach { $0.play() }
     }
 
+    // Only updates buffers — no graph changes, no HAL reconfiguration
     func preloadTones(_ tones: [SoundTone]) {
-        for node in playerNodes.values { node.stop(); engine.detach(node) }
-        playerNodes.removeAll()
         cachedBuffers.removeAll()
-
         for tone in tones {
             guard let buffer = loadBuffer(for: tone) else {
                 print("AudioEngine: no audio for '\(tone.name)' (id \(tone.id))")
                 continue
             }
             cachedBuffers[tone.id] = buffer
-            let node = AVAudioPlayerNode()
-            engine.attach(node)
-            // All nodes use the same format — no mixed-format graph issues
-            engine.connect(node, to: mixer, format: Self.standardFormat)
-            playerNodes[tone.id] = node
         }
-
-        if !engine.isRunning { startEngine() }
     }
 
     func play(toneID: Int) {
-        guard let buffer = cachedBuffers[toneID],
-              let node = playerNodes[toneID] else { return }
-        if !engine.isRunning { startEngine() }
-        node.scheduleBuffer(buffer, at: nil, options: .interrupts)
-        if !node.isPlaying { node.play() }
+        guard let buffer = cachedBuffers[toneID], toneID < nodes.count else { return }
+        nodes[toneID].scheduleBuffer(buffer, at: nil, options: .interrupts)
     }
 
     func stopAll() {
-        playerNodes.values.forEach { $0.stop() }
+        nodes.forEach { $0.stop() }
     }
 
     // MARK: - Private
@@ -69,17 +69,15 @@ final class AudioEngine {
         }
 
         guard let audioFile = try? AVAudioFile(forReading: url) else { return nil }
-
-        // Read the file in its native format first
         let fileFormat = audioFile.processingFormat
         let frameCount = AVAudioFrameCount(audioFile.length)
-        guard let fileBuffer = AVAudioPCMBuffer(pcmFormat: fileFormat, frameCapacity: frameCount) else { return nil }
-        guard (try? audioFile.read(into: fileBuffer)) != nil else { return nil }
 
-        // If already in standard format, use directly
+        guard let fileBuffer = AVAudioPCMBuffer(pcmFormat: fileFormat, frameCapacity: frameCount),
+              (try? audioFile.read(into: fileBuffer)) != nil else { return nil }
+
         if fileFormat == Self.standardFormat { return fileBuffer }
 
-        // Otherwise convert to standard format so all nodes share one format
+        // Convert to standard format so every buffer matches the graph's node format
         guard let converter = AVAudioConverter(from: fileFormat, to: Self.standardFormat) else { return nil }
         let outputCapacity = AVAudioFrameCount(
             Double(frameCount) * Self.standardFormat.sampleRate / fileFormat.sampleRate
@@ -88,10 +86,7 @@ final class AudioEngine {
                                                   frameCapacity: outputCapacity) else { return nil }
         var inputConsumed = false
         let status = converter.convert(to: outputBuffer, error: nil) { _, outStatus in
-            if inputConsumed {
-                outStatus.pointee = .endOfStream
-                return nil
-            }
+            if inputConsumed { outStatus.pointee = .endOfStream; return nil }
             inputConsumed = true
             outStatus.pointee = .haveData
             return fileBuffer
