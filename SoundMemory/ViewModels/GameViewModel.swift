@@ -110,6 +110,7 @@ final class GameViewModel: ObservableObject {
                 state.phase = .idle
             }
         } else {
+            try? await Task.sleep(for: .milliseconds(1200))
             state.setFaceUp(false, cardID: firstID)
             state.setFaceUp(false, cardID: secondID)
             state.currentPlayerIndex = state.currentPlayerIndex == 0 ? 1 : 0
