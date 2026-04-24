@@ -1,0 +1,46 @@
+# Xcode
+DerivedData/
+build/
+*.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+
+# User settings
+*.xcuserdatad/
+*.xcuserstate
+*.xcscmblueprint
+
+# Swift Package Manager
+/.build/
+/Packages/
+Package.resolved
+
+# CocoaPods
+/Pods/
+
+# Carthage
+/Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output
+
+# Archives
+*.xcarchive
+
+# Logs
+*.log
+
+# Misc
+.DS_Store
+*.swp
+*.lock
+
+# SwiftPM Xcode integration
+.xcworkspace/xcshareddata/swiftpm/Package.resolved
+
+# Tuist
+/.tuist-
+
+# Xcode Cloud
+ci_scripts/
