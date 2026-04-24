@@ -70,7 +70,7 @@
 		2A6808280536BF03552E0C8D /* animal_wolf.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_wolf.mp3; sourceTree = "<group>"; };
 		2B63ED7F57D77306399886DF /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		2C095CC036ED68219AA6909F /* animal_frog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_frog.mp3; sourceTree = "<group>"; };
-		2E3A89F6BEF0C69EA796AFFA /* SoundMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E3A89F6BEF0C69EA796AFFA /* SoundMemory.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SoundMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F51DCC18190920543E94785 /* animal_bird.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_bird.mp3; sourceTree = "<group>"; };
 		487FDF326E43F88D46EBB055 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		54F3C96BEFD8F1AA874F9754 /* SoundTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTheme.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		AAD35DE3F42AF0B8BC3200F5 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		AB04634D8A6455BC16449E96 /* animal_pig.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_pig.mp3; sourceTree = "<group>"; };
 		AD28139DAEA495BC2FAE89F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AD759EDF268B49AC0EA4F993 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AD759EDF268B49AC0EA4F993 /* .gitignore */ = {isa = PBXFileReference; path = .gitignore; sourceTree = "<group>"; };
 		B44F5C6A1841BFC7CD34D3A2 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		B62A86973A130A1B6E997651 /* animal_duck.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_duck.mp3; sourceTree = "<group>"; };
 		C3B7987DB6B4F6AF7B418C39 /* SoundTone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTone.swift; sourceTree = "<group>"; };
@@ -329,6 +329,7 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					0C5DAA870F8BC525931BAF4F = {
+						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -520,7 +521,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZR4H9PTM48;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SoundMemory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,7 +529,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.j0schka.ohrenspiel;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -615,7 +617,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZR4H9PTM48;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SoundMemory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -623,7 +625,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.j0schka.ohrenspiel;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

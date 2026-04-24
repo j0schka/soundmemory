@@ -16,6 +16,11 @@ settings:
     SUPPORTS_IPHONE: YES
     SWIFT_STRICT_CONCURRENCY: complete
     ENABLE_PREVIEWS: YES
+  configs:
+    Debug:
+      TARGETED_DEVICE_FAMILY: 1
+    Release:
+      TARGETED_DEVICE_FAMILY: 1
 
 targets:
   SoundMemory:
@@ -30,6 +35,13 @@ targets:
         CODE_SIGN_STYLE: Automatic
         DEVELOPMENT_TEAM: ""
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        TARGETED_DEVICE_FAMILY: 1
+        SUPPORTS_IPAD: NO
+      configs:
+        Debug:
+          TARGETED_DEVICE_FAMILY: 1
+        Release:
+          TARGETED_DEVICE_FAMILY: 1
     info:
       path: SoundMemory/Info.plist
       properties:
