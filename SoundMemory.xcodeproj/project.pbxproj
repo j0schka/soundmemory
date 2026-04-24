@@ -54,6 +54,18 @@
 		1AA6C7E472E997E42439C267 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		2B63ED7F57D77306399886DF /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		2E3A89F6BEF0C69EA796AFFA /* SoundMemory.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SoundMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		401918692F9B6130001B688D /* animal_bee.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_bee.mp3; sourceTree = "<group>"; };
+		4019186A2F9B6130001B688D /* animal_bird.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_bird.mp3; sourceTree = "<group>"; };
+		4019186B2F9B6130001B688D /* animal_cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_cat.mp3; sourceTree = "<group>"; };
+		4019186C2F9B6130001B688D /* animal_cow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_cow.mp3; sourceTree = "<group>"; };
+		4019186D2F9B6130001B688D /* animal_dog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_dog.mp3; sourceTree = "<group>"; };
+		4019186E2F9B6130001B688D /* animal_duck.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_duck.mp3; sourceTree = "<group>"; };
+		4019186F2F9B6130001B688D /* animal_frog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_frog.mp3; sourceTree = "<group>"; };
+		401918702F9B6130001B688D /* animal_horse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_horse.mp3; sourceTree = "<group>"; };
+		401918712F9B6130001B688D /* animal_lion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_lion.mp3; sourceTree = "<group>"; };
+		401918722F9B6130001B688D /* animal_owl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_owl.mp3; sourceTree = "<group>"; };
+		401918732F9B6130001B688D /* animal_pig.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_pig.mp3; sourceTree = "<group>"; };
+		401918742F9B6130001B688D /* animal_wolf.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_wolf.mp3; sourceTree = "<group>"; };
 		487FDF326E43F88D46EBB055 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		54F3C96BEFD8F1AA874F9754 /* SoundTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTheme.swift; sourceTree = "<group>"; };
 		5AB5D44C363F57AEEB2C195D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -187,6 +199,18 @@
 		DBCAB90CA21505BB197AB421 /* SoundMemory */ = {
 			isa = PBXGroup;
 			children = (
+				401918692F9B6130001B688D /* animal_bee.mp3 */,
+				4019186A2F9B6130001B688D /* animal_bird.mp3 */,
+				4019186B2F9B6130001B688D /* animal_cat.mp3 */,
+				4019186C2F9B6130001B688D /* animal_cow.mp3 */,
+				4019186D2F9B6130001B688D /* animal_dog.mp3 */,
+				4019186E2F9B6130001B688D /* animal_duck.mp3 */,
+				4019186F2F9B6130001B688D /* animal_frog.mp3 */,
+				401918702F9B6130001B688D /* animal_horse.mp3 */,
+				401918712F9B6130001B688D /* animal_lion.mp3 */,
+				401918722F9B6130001B688D /* animal_owl.mp3 */,
+				401918732F9B6130001B688D /* animal_pig.mp3 */,
+				401918742F9B6130001B688D /* animal_wolf.mp3 */,
 				845781AB0668A5820EE1A400 /* Info.plist */,
 				A90CDA43CA961DA00C49D301 /* App */,
 				E6DFEE6AA42D4D826246B4BD /* Audio */,
