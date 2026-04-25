@@ -91,17 +91,19 @@ private struct ThemeCard: View {
 
     private var iconBoxBackground: Color {
         switch theme {
-        case .musical: return Color.skyLight
-        case .city:    return Color.tanLight
-        case .animals: return Color.sageLight
+        case .musical:   return Color.skyLight
+        case .city:      return Color.tanLight
+        case .animals:   return Color.sageLight
+        case .household: return Color.goldLight
         }
     }
 
     private var iconColor: Color {
         switch theme {
-        case .musical: return Color.sky
-        case .city:    return Color.tangerine
-        case .animals: return Color.sage
+        case .musical:   return Color.sky
+        case .city:      return Color.tangerine
+        case .animals:   return Color.sage
+        case .household: return Color.gold
         }
     }
 }

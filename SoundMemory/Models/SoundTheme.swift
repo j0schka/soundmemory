@@ -9,32 +9,36 @@ enum SoundTheme: String, CaseIterable, Identifiable, Hashable {
     case musical
     case city
     case animals
+    case household
 
     var id: String { rawValue }
     var displayName: String { rawValue.capitalized }
 
     var icon: String {
         switch self {
-        case .musical:  return "pianokeys"
-        case .city:     return "building.2.fill"
-        case .animals:  return "pawprint.fill"
+        case .musical:   return "pianokeys"
+        case .city:      return "building.2.fill"
+        case .animals:   return "pawprint.fill"
+        case .household: return "house.fill"
         }
     }
 
     var description: String {
         switch self {
-        case .musical:  return "Classic do-re-mi notes across two octaves"
-        case .city:     return "Horns, sirens, bells and urban soundscapes"
-        case .animals:  return "Barks, chirps, moos and creatures of nature"
+        case .musical:   return "Classic do-re-mi notes across two octaves"
+        case .city:      return "Horns, sirens, bells and urban soundscapes"
+        case .animals:   return "Barks, chirps, moos and creatures of nature"
+        case .household: return "Beeps, buzzes and everyday home appliances"
         }
     }
 
     // Up to 12 sounds — caller slices to difficulty.pairCount
     var allDescriptors: [SoundDescriptor] {
         switch self {
-        case .musical:  return musicalSounds
-        case .city:     return citySounds
-        case .animals:  return animalSounds
+        case .musical:   return musicalSounds
+        case .city:      return citySounds
+        case .animals:   return animalSounds
+        case .household: return householdSounds
         }
     }
 
@@ -97,4 +101,33 @@ private let animalSounds: [SoundDescriptor] = [
     SoundDescriptor(name: "Owl",     source: .file("animal_owl")),
     SoundDescriptor(name: "Lion",    source: .file("animal_lion")),
     SoundDescriptor(name: "Wolf",    source: .file("animal_wolf")),
+]
+
+// MARK: - Household (12 synthesised home appliance sounds)
+
+private let householdSounds: [SoundDescriptor] = [
+    // Microwave beep — clean short electronic pip
+    SoundDescriptor(name: "Microwave",    source: .synthesized(SynthConfig(layers: [.sine(1000, amp: 0.65)], duration: 0.28, attackTime: 0.005, releaseTime: 0.060))),
+    // Doorbell — two-tone resonant chime
+    SoundDescriptor(name: "Doorbell",     source: .synthesized(SynthConfig(layers: [.sine(587, amp: 0.70), .sine(494, amp: 0.40)], duration: 0.85, attackTime: 0.005, releaseTime: 0.500))),
+    // Alarm clock — pulsed buzzing beep
+    SoundDescriptor(name: "Alarm",        source: .synthesized(SynthConfig(layers: [.pulsedSine(880, pulseRate: 4, amp: 0.75)], duration: 0.80, attackTime: 0.010, releaseTime: 0.060))),
+    // Kettle — rising steam whistle sweep
+    SoundDescriptor(name: "Kettle",       source: .synthesized(SynthConfig(layers: [.sweep(from: 700, to: 1500, amp: 0.70)], duration: 0.80, attackTime: 0.080, releaseTime: 0.120))),
+    // Phone ring — FM-modulated classic ring tone
+    SoundDescriptor(name: "Phone",        source: .synthesized(SynthConfig(layers: [.fm(carrier: 480, depth: 60, rate: 25, amp: 0.70)], duration: 0.70, attackTime: 0.015, releaseTime: 0.100))),
+    // Smoke alarm — shrill high-pitched pulsed beep
+    SoundDescriptor(name: "Smoke Alarm",  source: .synthesized(SynthConfig(layers: [.pulsedSine(3000, pulseRate: 3, amp: 0.55)], duration: 0.80, attackTime: 0.005, releaseTime: 0.060))),
+    // Blender — fast pulsed mechanical noise
+    SoundDescriptor(name: "Blender",      source: .synthesized(SynthConfig(layers: [.pulsedNoise(pulseRate: 30, amp: 0.75)], duration: 0.65, attackTime: 0.020, releaseTime: 0.080))),
+    // Washing machine — low-frequency rumble
+    SoundDescriptor(name: "Washer",       source: .synthesized(SynthConfig(layers: [.sine(55, amp: 0.55), .noise(amp: 0.25)], duration: 0.80, attackTime: 0.120, releaseTime: 0.150))),
+    // Clock tick — sharp percussive transient
+    SoundDescriptor(name: "Clock Tick",   source: .synthesized(SynthConfig(layers: [.noise(amp: 0.80)], duration: 0.07, attackTime: 0.002, releaseTime: 0.025))),
+    // Vacuum cleaner — mid-range drone with noise
+    SoundDescriptor(name: "Vacuum",       source: .synthesized(SynthConfig(layers: [.noise(amp: 0.50), .sine(260, amp: 0.35)], duration: 0.75, attackTime: 0.150, releaseTime: 0.180))),
+    // Dryer end-of-cycle buzz — FM buzz tone
+    SoundDescriptor(name: "Dryer Buzz",   source: .synthesized(SynthConfig(layers: [.fm(carrier: 200, depth: 130, rate: 40, amp: 0.78)], duration: 0.55, attackTime: 0.008, releaseTime: 0.060))),
+    // Coffee maker — low burble with slow pulsed noise
+    SoundDescriptor(name: "Coffee Maker", source: .synthesized(SynthConfig(layers: [.sine(120, amp: 0.42), .pulsedNoise(pulseRate: 5, amp: 0.45)], duration: 0.75, attackTime: 0.060, releaseTime: 0.100))),
 ]
