@@ -14,7 +14,7 @@ final class SubscriptionManager: ObservableObject {
     // MARK: - Constants
 
     static let freeLimit = 3
-    static let productID = "ohrenspiel_premium_monthly"
+    static let productID = "ohrenspiel_monthly"
 
     // MARK: - Computed helpers
 

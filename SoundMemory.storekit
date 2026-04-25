@@ -8,7 +8,7 @@
       "displayName" : "Premium",
       "familySharable" : false,
       "groupLevel" : 1,
-      "identifier" : "ohrenspiel_premium_monthly",
+      "identifier" : "ohrenspiel_monthly",
       "internalID" : "1000000001",
       "localizations" : [
         {
@@ -22,7 +22,7 @@
           "locale" : "de_DE"
         }
       ],
-      "productID" : "ohrenspiel_premium_monthly",
+      "productID" : "ohrenspiel_monthly",
       "recurringSubscriptionPeriod" : "P1M",
       "referenceName" : "Premium Monthly",
       "subscriptionGroupID" : "group_premium",
