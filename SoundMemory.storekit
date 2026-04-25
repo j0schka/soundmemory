@@ -1,0 +1,43 @@
+{
+  "identifier" : "A1B2C3D4-E5F6-7890-ABCD-EF1234567890",
+  "nonConsumableProducts" : [],
+  "consumableProducts" : [],
+  "autoRenewableSubscriptions" : [
+    {
+      "debugDescription" : "Unlimited daily rounds",
+      "displayName" : "Premium",
+      "familySharable" : false,
+      "groupLevel" : 1,
+      "identifier" : "ohrenspiel_premium_monthly",
+      "internalID" : "1000000001",
+      "localizations" : [
+        {
+          "description" : "Unlimited rounds every day, all themes unlocked.",
+          "displayName" : "Premium",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Unbegrenzte Runden täglich, alle Themen freigeschaltet.",
+          "displayName" : "Premium",
+          "locale" : "de_DE"
+        }
+      ],
+      "productID" : "ohrenspiel_premium_monthly",
+      "recurringSubscriptionPeriod" : "P1M",
+      "referenceName" : "Premium Monthly",
+      "subscriptionGroupID" : "group_premium",
+      "type" : "RecurringSubscription"
+    }
+  ],
+  "subscriptionGroups" : [
+    {
+      "id" : "group_premium",
+      "localizations" : [],
+      "name" : "Premium"
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

@@ -6,8 +6,10 @@ struct GameOverView: View {
     let onPlayAgain: () -> Void
     let onHome: () -> Void
 
+    @EnvironmentObject private var env: AppEnvironment
     @Environment(\.dismiss) private var dismiss
     @State private var cardAppeared = false
+    @State private var showPaywall = false
 
     var body: some View {
         ZStack {
@@ -49,6 +51,18 @@ struct GameOverView: View {
         .onAppear {
             cardAppeared = true
             HapticManager.notification(.success)
+        }
+        .fullScreenCover(isPresented: $showPaywall) {
+            PaywallView {
+                showPaywall = false
+                env.subscriptionManager.recordRoundStarted()
+                dismiss()
+                onPlayAgain()
+            } onDismiss: {
+                showPaywall = false
+                dismiss()
+                onHome()
+            }
         }
     }
 
@@ -146,8 +160,13 @@ struct GameOverView: View {
     private var actionButtons: some View {
         VStack(spacing: 12) {
             Button {
-                dismiss()
-                onPlayAgain()
+                if env.subscriptionManager.canPlay {
+                    env.subscriptionManager.recordRoundStarted()
+                    dismiss()
+                    onPlayAgain()
+                } else {
+                    showPaywall = true
+                }
             } label: {
                 Text("Play Again")
                     .font(.system(size: 20, weight: .semibold, design: .rounded))

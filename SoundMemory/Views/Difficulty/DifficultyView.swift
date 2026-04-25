@@ -5,6 +5,9 @@ struct DifficultyView: View {
     let playerMode: PlayerMode
     @EnvironmentObject private var env: AppEnvironment
 
+    @State private var showPaywall = false
+    @State private var pendingDifficulty: Difficulty? = nil
+
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("How many cards?")
@@ -14,10 +17,12 @@ struct DifficultyView: View {
 
             ForEach(Difficulty.allCases) { difficulty in
                 DifficultyButton(difficulty: difficulty) {
-                    if playerMode == .online {
-                        env.navigationPath.append(Route.matchmaking(difficulty, theme))
+                    if env.subscriptionManager.canPlay {
+                        env.subscriptionManager.recordRoundStarted()
+                        navigate(difficulty: difficulty)
                     } else {
-                        env.navigationPath.append(Route.game(difficulty, theme, playerMode))
+                        pendingDifficulty = difficulty
+                        showPaywall = true
                     }
                 }
             }
@@ -28,6 +33,27 @@ struct DifficultyView: View {
         .background(Color.cream.ignoresSafeArea())
         .navigationTitle(theme.displayName)
         .navigationBarTitleDisplayMode(.inline)
+        .fullScreenCover(isPresented: $showPaywall) {
+            PaywallView {
+                // Purchased — record round and proceed
+                showPaywall = false
+                if let d = pendingDifficulty {
+                    env.subscriptionManager.recordRoundStarted()
+                    navigate(difficulty: d)
+                }
+            } onDismiss: {
+                showPaywall = false
+                env.navigationPath = NavigationPath()
+            }
+        }
+    }
+
+    private func navigate(difficulty: Difficulty) {
+        if playerMode == .online {
+            env.navigationPath.append(Route.matchmaking(difficulty, theme))
+        } else {
+            env.navigationPath.append(Route.game(difficulty, theme, playerMode))
+        }
     }
 }
 

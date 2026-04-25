@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		03009FB9E7DA5EAD507A2BFC /* SoundTone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B7987DB6B4F6AF7B418C39 /* SoundTone.swift */; };
 		10E0C14C19825DF4B8290CBC /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B63ED7F57D77306399886DF /* TimerViewModel.swift */; };
+		12FFA64C16E5F2C616CB08B1 /* city_train_whistle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F17D46E36A88E203AA253526 /* city_train_whistle.mp3 */; };
 		20C2DAF3E961E8558746E894 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094A564FA8CB7A7E52F6D4D /* GameView.swift */; };
 		21D2DA94009BA9F20B7CB8BA /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD35DE3F42AF0B8BC3200F5 /* Card.swift */; };
 		2567AFA4CC87B8EA57701325 /* animal_cow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 785072D625788B1203CFA3AA /* animal_cow.mp3 */; };
@@ -20,18 +21,9 @@
 		31660F6367605D9C33C8E1C3 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971493340B6DFD26048C1CB7 /* HapticManager.swift */; };
 		32ACE86D515E608581DB71E2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1751F195FC047BB6BF45B954 /* README.md */; };
 		3641DD58BA707EF4ACF9368D /* DifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E9CD4A24AD5173218F340 /* DifficultyView.swift */; };
-		40D7EA0C2F9CFC1D00295C9E /* city_bicycle_bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA002F9CFC1D00295C9E /* city_bicycle_bell.mp3 */; };
-		40D7EA0D2F9CFC1D00295C9E /* city_car_horn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA022F9CFC1D00295C9E /* city_car_horn.mp3 */; };
-		40D7EA0E2F9CFC1D00295C9E /* city_bus_doors.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA012F9CFC1D00295C9E /* city_bus_doors.mp3 */; };
-		40D7EA0F2F9CFC1D00295C9E /* city_subway_chime.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA082F9CFC1D00295C9E /* city_subway_chime.mp3 */; };
-		40D7EA102F9CFC1D00295C9E /* city_jackhammer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA062F9CFC1D00295C9E /* city_jackhammer.mp3 */; };
-		40D7EA112F9CFC1D00295C9E /* city_police_siren.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA072F9CFC1D00295C9E /* city_police_siren.mp3 */; };
-		40D7EA122F9CFC1D00295C9E /* city_subway_door.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA092F9CFC1D00295C9E /* city_subway_door.mp3 */; };
-		40D7EA132F9CFC1D00295C9E /* city_train_whistle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA0A2F9CFC1D00295C9E /* city_train_whistle.mp3 */; };
-		40D7EA142F9CFC1D00295C9E /* city_cash_register.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA032F9CFC1D00295C9E /* city_cash_register.mp3 */; };
-		40D7EA152F9CFC1D00295C9E /* city_double_honk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA052F9CFC1D00295C9E /* city_double_honk.mp3 */; };
-		40D7EA162F9CFC1D00295C9E /* city_church_bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA042F9CFC1D00295C9E /* city_church_bell.mp3 */; };
-		40D7EA172F9CFC1D00295C9E /* city_vintage_horn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA0B2F9CFC1D00295C9E /* city_vintage_horn.mp3 */; };
+		3A01CF76FE0E0B55E6997B0A /* city_car_horn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C4A69FDA51AEE715F4AEEB4 /* city_car_horn.mp3 */; };
+		42AA952F1AF7484B6107544B /* city_subway_chime.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CDCCBEC7414BE989C531D2A3 /* city_subway_chime.mp3 */; };
+		475AAE81BC11372B30186B3A /* city_church_bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F6D98973FC078FE93C8761A /* city_church_bell.mp3 */; };
 		498F0758C6DA2F45056A4FCD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1669E27AEC55BFADFAAA49F3 /* HomeView.swift */; };
 		52E94C979031DE2FD76FC743 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487FDF326E43F88D46EBB055 /* Player.swift */; };
 		557281EE25D2F36E2190883B /* SoundTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3C96BEFD8F1AA874F9754 /* SoundTheme.swift */; };
@@ -41,22 +33,31 @@
 		6FD8C56C6D96C371493616F9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A3EABCF20E88FC127C9F0B /* GameKit.framework */; };
 		7A4BD7761F0D73D0187B0662 /* animal_bird.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2F51DCC18190920543E94785 /* animal_bird.mp3 */; };
 		7C49F4D89847F5E603BBCC7A /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF60542A58056D8DF6F93A91 /* Difficulty.swift */; };
+		90614AA44F93BC1F52158FD1 /* city_bicycle_bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B6259388D25D5596EE57483 /* city_bicycle_bell.mp3 */; };
 		922F15B9833CF06F8C60F49E /* animal_duck.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B62A86973A130A1B6E997651 /* animal_duck.mp3 */; };
+		92E25B037CBEDF859132DE3C /* city_subway_door.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE7AE90816086FC7F6493324 /* city_subway_door.mp3 */; };
 		938874DB06FEDB37A4438F09 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EFA3C58FE4B6DB6729FBC6 /* GameViewModel.swift */; };
 		9D6CAD097A9F852E96F4C1F8 /* animal_owl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DAF478B066F8EDCE03D3BF9C /* animal_owl.mp3 */; };
+		A43E8DEC8AB5A52535A22B09 /* city_cash_register.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFFB565416362CACA2B59309 /* city_cash_register.mp3 */; };
+		A7464A3C655AEA3AA3E04642 /* city_bus_doors.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 576CC2460CCDC33F86D56FB7 /* city_bus_doors.mp3 */; };
 		ABD6CF2C5BCB29C27528CFCC /* PlayerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB4A34426F37D6DD25A9AB3 /* PlayerMode.swift */; };
+		B0AF6FB9726D71F4804B06F8 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5897A5D03F9DB07938F94 /* PaywallView.swift */; };
 		B1FFA2D9D7B502730922A812 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359EDFA4423B00509EA9A42 /* GameOverView.swift */; };
 		B2E64A9E8251C8423132ACF6 /* MatchmakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47B6ED31E6FE620A3739429 /* MatchmakingView.swift */; };
 		B4D4D05427162F0439D13223 /* Color+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F08CEBEA7E44CDD41567A /* Color+Design.swift */; };
+		BA40172DB5261D1417F8BF31 /* city_police_siren.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C28522E4070AADE7A42790C0 /* city_police_siren.mp3 */; };
 		BDCEBE71B7B0505CD87111D7 /* ToneGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E77322169212F8B728D75F4 /* ToneGenerator.swift */; };
 		BEBA61919BEB9235FA67A7A1 /* ScoreBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18DFE08E2648A7E404A4C73 /* ScoreBarView.swift */; };
 		C02025FAE4A3359BAE7E6BC8 /* animal_lion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6A38E6BB01424417574CB240 /* animal_lion.mp3 */; };
 		C1D7BB5F82C8BD1DBF20EF26 /* animal_dog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4DF2708292CE991AC3FE1FA /* animal_dog.mp3 */; };
 		C351C5E464B42F14D74F4213 /* CardGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A390E3EC1756B60537B807AC /* CardGridView.swift */; };
+		CAD94B33EC224FFDB4C6AAB4 /* city_double_honk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 398AD1F7771C43E88C7DBDEC /* city_double_honk.mp3 */; };
 		CDBA96CB1A1084AC393FC5CE /* animal_wolf.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A6808280536BF03552E0C8D /* animal_wolf.mp3 */; };
+		D63BE0CE1B56CD1D4A0734BF /* city_jackhammer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83B25CDA0597D145EAB41377 /* city_jackhammer.mp3 */; };
 		DB8E4B2C7E7B68AE60CDA8F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB5D44C363F57AEEB2C195D /* Constants.swift */; };
 		E36289352C77C6E7FBC3561C /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8307271530673A85C800EF2 /* AudioEngine.swift */; };
 		E7CB7E9880A8A1F319D120E8 /* animal_cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 917A4A36908220C98CA6B1FC /* animal_cat.mp3 */; };
+		E8F8570169576C8F83ECAC09 /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0794A4F8AD2C2869C3204549 /* SubscriptionManager.swift */; };
 		EABDBE43861D049D2C096DE4 /* animal_horse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9E6D42B178FEF7D5B44469C /* animal_horse.mp3 */; };
 		EB9AE63BE0928B2703EDE40D /* PassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC888DC8757161ADC6D96B4D /* PassView.swift */; };
 		ED4D27925A93C1B1415648E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD28139DAEA495BC2FAE89F0 /* Assets.xcassets */; };
@@ -66,6 +67,8 @@
 		F703727CFC2C6B275C0FB20F /* animal_pig.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB04634D8A6455BC16449E96 /* animal_pig.mp3 */; };
 		F922B9743D675F94A6CB4B47 /* SoundMemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7989D7DB1C723FF7A834536C /* SoundMemoryTests.swift */; };
 		FDAB4F640DE6FC20D14A987E /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA6C7E472E997E42439C267 /* AppEnvironment.swift */; };
+		FF0EABBBC3F26751F163CF9E /* city_vintage_horn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D40DD15A2711F1CA76C2D7C9 /* city_vintage_horn.mp3 */; };
+		FF207442B392CE57E9117B5C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E2E857FF20777BF9259FED1 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,33 +82,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0794A4F8AD2C2869C3204549 /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 		0AB232D11A504B5BBCEDCCB2 /* CelebrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationView.swift; sourceTree = "<group>"; };
 		0F5E9CD4A24AD5173218F340 /* DifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyView.swift; sourceTree = "<group>"; };
+		0F6D98973FC078FE93C8761A /* city_church_bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_church_bell.mp3; sourceTree = "<group>"; };
 		10EFA3C58FE4B6DB6729FBC6 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		1669E27AEC55BFADFAAA49F3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1751F195FC047BB6BF45B954 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1AA6C7E472E997E42439C267 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		1E2E857FF20777BF9259FED1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2A6808280536BF03552E0C8D /* animal_wolf.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_wolf.mp3; sourceTree = "<group>"; };
 		2B63ED7F57D77306399886DF /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		2C095CC036ED68219AA6909F /* animal_frog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_frog.mp3; sourceTree = "<group>"; };
 		2E3A89F6BEF0C69EA796AFFA /* SoundMemory.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SoundMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F51DCC18190920543E94785 /* animal_bird.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_bird.mp3; sourceTree = "<group>"; };
-		40D7EA002F9CFC1D00295C9E /* city_bicycle_bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_bicycle_bell.mp3; sourceTree = "<group>"; };
-		40D7EA012F9CFC1D00295C9E /* city_bus_doors.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_bus_doors.mp3; sourceTree = "<group>"; };
-		40D7EA022F9CFC1D00295C9E /* city_car_horn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_car_horn.mp3; sourceTree = "<group>"; };
-		40D7EA032F9CFC1D00295C9E /* city_cash_register.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_cash_register.mp3; sourceTree = "<group>"; };
-		40D7EA042F9CFC1D00295C9E /* city_church_bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_church_bell.mp3; sourceTree = "<group>"; };
-		40D7EA052F9CFC1D00295C9E /* city_double_honk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_double_honk.mp3; sourceTree = "<group>"; };
-		40D7EA062F9CFC1D00295C9E /* city_jackhammer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_jackhammer.mp3; sourceTree = "<group>"; };
-		40D7EA072F9CFC1D00295C9E /* city_police_siren.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_police_siren.mp3; sourceTree = "<group>"; };
-		40D7EA082F9CFC1D00295C9E /* city_subway_chime.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_subway_chime.mp3; sourceTree = "<group>"; };
-		40D7EA092F9CFC1D00295C9E /* city_subway_door.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_subway_door.mp3; sourceTree = "<group>"; };
-		40D7EA0A2F9CFC1D00295C9E /* city_train_whistle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_train_whistle.mp3; sourceTree = "<group>"; };
-		40D7EA0B2F9CFC1D00295C9E /* city_vintage_horn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_vintage_horn.mp3; sourceTree = "<group>"; };
+		398AD1F7771C43E88C7DBDEC /* city_double_honk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_double_honk.mp3; sourceTree = "<group>"; };
 		44A3EABCF20E88FC127C9F0B /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		487FDF326E43F88D46EBB055 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		54F3C96BEFD8F1AA874F9754 /* SoundTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTheme.swift; sourceTree = "<group>"; };
+		576CC2460CCDC33F86D56FB7 /* city_bus_doors.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_bus_doors.mp3; sourceTree = "<group>"; };
 		5AB5D44C363F57AEEB2C195D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5B6259388D25D5596EE57483 /* city_bicycle_bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_bicycle_bell.mp3; sourceTree = "<group>"; };
+		5C4A69FDA51AEE715F4AEEB4 /* city_car_horn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_car_horn.mp3; sourceTree = "<group>"; };
 		5F6F08CEBEA7E44CDD41567A /* Color+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Design.swift"; sourceTree = "<group>"; };
 		630E45A0490FBC383644B179 /* MatchMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMessage.swift; sourceTree = "<group>"; };
 		6A38E6BB01424417574CB240 /* animal_lion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_lion.mp3; sourceTree = "<group>"; };
@@ -114,6 +112,7 @@
 		7989D7DB1C723FF7A834536C /* SoundMemoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundMemoryTests.swift; sourceTree = "<group>"; };
 		7B648E5874337817EE95F6F0 /* SynthConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthConfig.swift; sourceTree = "<group>"; };
 		7E77322169212F8B728D75F4 /* ToneGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneGenerator.swift; sourceTree = "<group>"; };
+		83B25CDA0597D145EAB41377 /* city_jackhammer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_jackhammer.mp3; sourceTree = "<group>"; };
 		845781AB0668A5820EE1A400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		917A4A36908220C98CA6B1FC /* animal_cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_cat.mp3; sourceTree = "<group>"; };
 		91F2CD1695D1443C2B4E108E /* PulseModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseModifier.swift; sourceTree = "<group>"; };
@@ -127,19 +126,26 @@
 		AAD35DE3F42AF0B8BC3200F5 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		AB04634D8A6455BC16449E96 /* animal_pig.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_pig.mp3; sourceTree = "<group>"; };
 		AD28139DAEA495BC2FAE89F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AD759EDF268B49AC0EA4F993 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AD759EDF268B49AC0EA4F993 /* .gitignore */ = {isa = PBXFileReference; path = .gitignore; sourceTree = "<group>"; };
+		AE7AE90816086FC7F6493324 /* city_subway_door.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_subway_door.mp3; sourceTree = "<group>"; };
 		B44F5C6A1841BFC7CD34D3A2 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		B5B5897A5D03F9DB07938F94 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		B62A86973A130A1B6E997651 /* animal_duck.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_duck.mp3; sourceTree = "<group>"; };
 		BAB8B706BBE51FB895FC925F /* SoundMemory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SoundMemory.entitlements; sourceTree = "<group>"; };
+		C28522E4070AADE7A42790C0 /* city_police_siren.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_police_siren.mp3; sourceTree = "<group>"; };
 		C3B7987DB6B4F6AF7B418C39 /* SoundTone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTone.swift; sourceTree = "<group>"; };
 		C9E6D42B178FEF7D5B44469C /* animal_horse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_horse.mp3; sourceTree = "<group>"; };
+		CDCCBEC7414BE989C531D2A3 /* city_subway_chime.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_subway_chime.mp3; sourceTree = "<group>"; };
+		CFFB565416362CACA2B59309 /* city_cash_register.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_cash_register.mp3; sourceTree = "<group>"; };
 		D326B5B647764CA93342C79D /* SoundMemoryTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SoundMemoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D359EDFA4423B00509EA9A42 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		D40DD15A2711F1CA76C2D7C9 /* city_vintage_horn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_vintage_horn.mp3; sourceTree = "<group>"; };
 		D8307271530673A85C800EF2 /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		DAF478B066F8EDCE03D3BF9C /* animal_owl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_owl.mp3; sourceTree = "<group>"; };
 		DC888DC8757161ADC6D96B4D /* PassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassView.swift; sourceTree = "<group>"; };
 		E094A564FA8CB7A7E52F6D4D /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		EF60542A58056D8DF6F93A91 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		F17D46E36A88E203AA253526 /* city_train_whistle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_train_whistle.mp3; sourceTree = "<group>"; };
 		F4DF2708292CE991AC3FE1FA /* animal_dog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_dog.mp3; sourceTree = "<group>"; };
 		F9285C17F9DE0329518F0051 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
 		FFE0063F1C3A840761055D18 /* SoundMemoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundMemoryApp.swift; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FD8C56C6D96C371493616F9 /* GameKit.framework in Frameworks */,
+				FF207442B392CE57E9117B5C /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +173,7 @@
 				28651C509C47082164419650 /* Home */,
 				A7F3A7B327FF11AF7C409404 /* Multiplayer */,
 				149150E11D7113CE471A2025 /* Pass */,
+				37E8DACBFFB1B3370582D9B8 /* Paywall */,
 				A1532D15C2C2510E0F50AC65 /* Theme */,
 			);
 			path = Views;
@@ -201,10 +209,19 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		37E8DACBFFB1B3370582D9B8 /* Paywall */ = {
+			isa = PBXGroup;
+			children = (
+				B5B5897A5D03F9DB07938F94 /* PaywallView.swift */,
+			);
+			path = Paywall;
+			sourceTree = "<group>";
+		};
 		5C78FEC0FA0763B5DB17A259 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				44A3EABCF20E88FC127C9F0B /* GameKit.framework */,
+				1E2E857FF20777BF9259FED1 /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -272,6 +289,14 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		D6C002278532EFB61A5588A3 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				0794A4F8AD2C2869C3204549 /* SubscriptionManager.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		D81DACA852F1DFB180784936 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,19 +331,19 @@
 				DAF478B066F8EDCE03D3BF9C /* animal_owl.mp3 */,
 				AB04634D8A6455BC16449E96 /* animal_pig.mp3 */,
 				2A6808280536BF03552E0C8D /* animal_wolf.mp3 */,
-				40D7EA002F9CFC1D00295C9E /* city_bicycle_bell.mp3 */,
-				40D7EA012F9CFC1D00295C9E /* city_bus_doors.mp3 */,
-				40D7EA022F9CFC1D00295C9E /* city_car_horn.mp3 */,
-				40D7EA032F9CFC1D00295C9E /* city_cash_register.mp3 */,
-				40D7EA042F9CFC1D00295C9E /* city_church_bell.mp3 */,
-				40D7EA052F9CFC1D00295C9E /* city_double_honk.mp3 */,
-				40D7EA062F9CFC1D00295C9E /* city_jackhammer.mp3 */,
-				40D7EA072F9CFC1D00295C9E /* city_police_siren.mp3 */,
-				40D7EA082F9CFC1D00295C9E /* city_subway_chime.mp3 */,
-				40D7EA092F9CFC1D00295C9E /* city_subway_door.mp3 */,
-				40D7EA0A2F9CFC1D00295C9E /* city_train_whistle.mp3 */,
-				40D7EA0B2F9CFC1D00295C9E /* city_vintage_horn.mp3 */,
 				AD28139DAEA495BC2FAE89F0 /* Assets.xcassets */,
+				5B6259388D25D5596EE57483 /* city_bicycle_bell.mp3 */,
+				576CC2460CCDC33F86D56FB7 /* city_bus_doors.mp3 */,
+				5C4A69FDA51AEE715F4AEEB4 /* city_car_horn.mp3 */,
+				CFFB565416362CACA2B59309 /* city_cash_register.mp3 */,
+				0F6D98973FC078FE93C8761A /* city_church_bell.mp3 */,
+				398AD1F7771C43E88C7DBDEC /* city_double_honk.mp3 */,
+				83B25CDA0597D145EAB41377 /* city_jackhammer.mp3 */,
+				C28522E4070AADE7A42790C0 /* city_police_siren.mp3 */,
+				CDCCBEC7414BE989C531D2A3 /* city_subway_chime.mp3 */,
+				AE7AE90816086FC7F6493324 /* city_subway_door.mp3 */,
+				F17D46E36A88E203AA253526 /* city_train_whistle.mp3 */,
+				D40DD15A2711F1CA76C2D7C9 /* city_vintage_horn.mp3 */,
 				845781AB0668A5820EE1A400 /* Info.plist */,
 				1751F195FC047BB6BF45B954 /* README.md */,
 				BAB8B706BBE51FB895FC925F /* SoundMemory.entitlements */,
@@ -326,6 +351,7 @@
 				E6DFEE6AA42D4D826246B4BD /* Audio */,
 				150BFB3C79130BA2E34905E3 /* Models */,
 				9131214BD162CC3180E4530E /* Multiplayer */,
+				D6C002278532EFB61A5588A3 /* Store */,
 				787AD4B1A7B89F75404433E8 /* Utilities */,
 				DB84937EDE6B8BA97EBC945C /* ViewModels */,
 				05011C825A993F190F8FF762 /* Views */,
@@ -463,20 +489,20 @@
 				EABDBE43861D049D2C096DE4 /* animal_horse.mp3 in Resources */,
 				C02025FAE4A3359BAE7E6BC8 /* animal_lion.mp3 in Resources */,
 				9D6CAD097A9F852E96F4C1F8 /* animal_owl.mp3 in Resources */,
-				40D7EA0C2F9CFC1D00295C9E /* city_bicycle_bell.mp3 in Resources */,
-				40D7EA0D2F9CFC1D00295C9E /* city_car_horn.mp3 in Resources */,
-				40D7EA0E2F9CFC1D00295C9E /* city_bus_doors.mp3 in Resources */,
-				40D7EA0F2F9CFC1D00295C9E /* city_subway_chime.mp3 in Resources */,
-				40D7EA102F9CFC1D00295C9E /* city_jackhammer.mp3 in Resources */,
-				40D7EA112F9CFC1D00295C9E /* city_police_siren.mp3 in Resources */,
-				40D7EA122F9CFC1D00295C9E /* city_subway_door.mp3 in Resources */,
-				40D7EA132F9CFC1D00295C9E /* city_train_whistle.mp3 in Resources */,
-				40D7EA142F9CFC1D00295C9E /* city_cash_register.mp3 in Resources */,
-				40D7EA152F9CFC1D00295C9E /* city_double_honk.mp3 in Resources */,
-				40D7EA162F9CFC1D00295C9E /* city_church_bell.mp3 in Resources */,
-				40D7EA172F9CFC1D00295C9E /* city_vintage_horn.mp3 in Resources */,
 				F703727CFC2C6B275C0FB20F /* animal_pig.mp3 in Resources */,
 				CDBA96CB1A1084AC393FC5CE /* animal_wolf.mp3 in Resources */,
+				90614AA44F93BC1F52158FD1 /* city_bicycle_bell.mp3 in Resources */,
+				A7464A3C655AEA3AA3E04642 /* city_bus_doors.mp3 in Resources */,
+				3A01CF76FE0E0B55E6997B0A /* city_car_horn.mp3 in Resources */,
+				A43E8DEC8AB5A52535A22B09 /* city_cash_register.mp3 in Resources */,
+				475AAE81BC11372B30186B3A /* city_church_bell.mp3 in Resources */,
+				CAD94B33EC224FFDB4C6AAB4 /* city_double_honk.mp3 in Resources */,
+				D63BE0CE1B56CD1D4A0734BF /* city_jackhammer.mp3 in Resources */,
+				BA40172DB5261D1417F8BF31 /* city_police_siren.mp3 in Resources */,
+				42AA952F1AF7484B6107544B /* city_subway_chime.mp3 in Resources */,
+				92E25B037CBEDF859132DE3C /* city_subway_door.mp3 in Resources */,
+				12FFA64C16E5F2C616CB08B1 /* city_train_whistle.mp3 in Resources */,
+				FF0EABBBC3F26751F163CF9E /* city_vintage_horn.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +541,7 @@
 				5CC38889EFF41DDAB008D561 /* MatchMessage.swift in Sources */,
 				B2E64A9E8251C8423132ACF6 /* MatchmakingView.swift in Sources */,
 				EB9AE63BE0928B2703EDE40D /* PassView.swift in Sources */,
+				B0AF6FB9726D71F4804B06F8 /* PaywallView.swift in Sources */,
 				52E94C979031DE2FD76FC743 /* Player.swift in Sources */,
 				ABD6CF2C5BCB29C27528CFCC /* PlayerMode.swift in Sources */,
 				ED5CA1EF5042589CC692BAE7 /* PulseModifier.swift in Sources */,
@@ -522,6 +549,7 @@
 				2B84C645C80DCA6E957BCE46 /* SoundMemoryApp.swift in Sources */,
 				557281EE25D2F36E2190883B /* SoundTheme.swift in Sources */,
 				03009FB9E7DA5EAD507A2BFC /* SoundTone.swift in Sources */,
+				E8F8570169576C8F83ECAC09 /* SubscriptionManager.swift in Sources */,
 				F4AD31751749F4A62E32E563 /* SynthConfig.swift in Sources */,
 				5A53737562F2451EB92EF15B /* ThemeView.swift in Sources */,
 				10E0C14C19825DF4B8290CBC /* TimerViewModel.swift in Sources */,

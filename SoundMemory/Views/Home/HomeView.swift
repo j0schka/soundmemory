@@ -30,6 +30,9 @@ struct HomeView: View {
 
                     Spacer()
 
+                    RoundsRemainingBadge(sub: env.subscriptionManager)
+                        .padding(.bottom, 4)
+
                     VStack(spacing: 12) {
                         Button {
                             env.navigationPath.append(Route.theme(.single))
@@ -115,6 +118,39 @@ struct HomeView: View {
         }
     }
 }
+
+// MARK: - Rounds badge
+
+private struct RoundsRemainingBadge: View {
+    @ObservedObject var sub: SubscriptionManager
+
+    var body: some View {
+        if sub.isSubscribed {
+            Label("Premium — unlimited play", systemImage: "star.fill")
+                .font(.system(size: 13, weight: .medium))
+                .foregroundStyle(Color.gold)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 7)
+                .background(Color.gold.opacity(0.12))
+                .clipShape(Capsule())
+        } else {
+            let remaining = sub.roundsRemaining
+            let color: Color = remaining > 0 ? Color.sage : Color.coral
+            Label(remaining > 0
+                  ? "\(remaining) of \(SubscriptionManager.freeLimit) free rounds left today"
+                  : "No free rounds left today",
+                  systemImage: remaining > 0 ? "play.circle" : "lock.fill")
+                .font(.system(size: 13, weight: .medium))
+                .foregroundStyle(color)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 7)
+                .background(color.opacity(0.12))
+                .clipShape(Capsule())
+        }
+    }
+}
+
+// MARK: - Sound wave
 
 private struct SoundWaveVisualiser: View {
     private let heights: [CGFloat] = [18, 32, 48, 60, 48, 32, 18]

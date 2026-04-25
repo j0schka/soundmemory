@@ -12,5 +12,6 @@ final class AppEnvironment: ObservableObject {
     @Published var navigationPath = NavigationPath()
     let audio = AudioEngine()
     let gcManager = GameCenterManager()
+    let subscriptionManager = SubscriptionManager()
     var pendingOnlineDeck: [Card]? = nil    // set by MatchmakingView before navigating to game
 }
