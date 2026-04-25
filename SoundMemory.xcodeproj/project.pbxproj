@@ -16,6 +16,7 @@
 		2B7E2897875F19EDD8D2DE73 /* animal_frog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C095CC036ED68219AA6909F /* animal_frog.mp3 */; };
 		2B84C645C80DCA6E957BCE46 /* SoundMemoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0063F1C3A840761055D18 /* SoundMemoryApp.swift */; };
 		2F1E033B3AF7AF907CC8A544 /* animal_bee.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C55406A0DC4209B4465975A /* animal_bee.mp3 */; };
+		31425A18570F8F839F1326A9 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9285C17F9DE0329518F0051 /* GameCenterManager.swift */; };
 		31660F6367605D9C33C8E1C3 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971493340B6DFD26048C1CB7 /* HapticManager.swift */; };
 		32ACE86D515E608581DB71E2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1751F195FC047BB6BF45B954 /* README.md */; };
 		3641DD58BA707EF4ACF9368D /* DifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E9CD4A24AD5173218F340 /* DifficultyView.swift */; };
@@ -24,6 +25,8 @@
 		557281EE25D2F36E2190883B /* SoundTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3C96BEFD8F1AA874F9754 /* SoundTheme.swift */; };
 		5A53737562F2451EB92EF15B /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E476E84D962A430E862FA4 /* ThemeView.swift */; };
 		5BB4E7D8D2445E753F11BF3A /* CelebrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB232D11A504B5BBCEDCCB2 /* CelebrationView.swift */; };
+		5CC38889EFF41DDAB008D561 /* MatchMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E45A0490FBC383644B179 /* MatchMessage.swift */; };
+		6FD8C56C6D96C371493616F9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A3EABCF20E88FC127C9F0B /* GameKit.framework */; };
 		7A4BD7761F0D73D0187B0662 /* animal_bird.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2F51DCC18190920543E94785 /* animal_bird.mp3 */; };
 		7C49F4D89847F5E603BBCC7A /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF60542A58056D8DF6F93A91 /* Difficulty.swift */; };
 		922F15B9833CF06F8C60F49E /* animal_duck.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B62A86973A130A1B6E997651 /* animal_duck.mp3 */; };
@@ -31,6 +34,7 @@
 		9D6CAD097A9F852E96F4C1F8 /* animal_owl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DAF478B066F8EDCE03D3BF9C /* animal_owl.mp3 */; };
 		ABD6CF2C5BCB29C27528CFCC /* PlayerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB4A34426F37D6DD25A9AB3 /* PlayerMode.swift */; };
 		B1FFA2D9D7B502730922A812 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359EDFA4423B00509EA9A42 /* GameOverView.swift */; };
+		B2E64A9E8251C8423132ACF6 /* MatchmakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47B6ED31E6FE620A3739429 /* MatchmakingView.swift */; };
 		B4D4D05427162F0439D13223 /* Color+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F08CEBEA7E44CDD41567A /* Color+Design.swift */; };
 		BDCEBE71B7B0505CD87111D7 /* ToneGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E77322169212F8B728D75F4 /* ToneGenerator.swift */; };
 		BEBA61919BEB9235FA67A7A1 /* ScoreBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18DFE08E2648A7E404A4C73 /* ScoreBarView.swift */; };
@@ -72,12 +76,14 @@
 		2A6808280536BF03552E0C8D /* animal_wolf.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_wolf.mp3; sourceTree = "<group>"; };
 		2B63ED7F57D77306399886DF /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		2C095CC036ED68219AA6909F /* animal_frog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_frog.mp3; sourceTree = "<group>"; };
-		2E3A89F6BEF0C69EA796AFFA /* SoundMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E3A89F6BEF0C69EA796AFFA /* SoundMemory.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SoundMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F51DCC18190920543E94785 /* animal_bird.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_bird.mp3; sourceTree = "<group>"; };
+		44A3EABCF20E88FC127C9F0B /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		487FDF326E43F88D46EBB055 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		54F3C96BEFD8F1AA874F9754 /* SoundTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTheme.swift; sourceTree = "<group>"; };
 		5AB5D44C363F57AEEB2C195D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5F6F08CEBEA7E44CDD41567A /* Color+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Design.swift"; sourceTree = "<group>"; };
+		630E45A0490FBC383644B179 /* MatchMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMessage.swift; sourceTree = "<group>"; };
 		6A38E6BB01424417574CB240 /* animal_lion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_lion.mp3; sourceTree = "<group>"; };
 		6AB4A34426F37D6DD25A9AB3 /* PlayerMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMode.swift; sourceTree = "<group>"; };
 		785072D625788B1203CFA3AA /* animal_cow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_cow.mp3; sourceTree = "<group>"; };
@@ -93,12 +99,14 @@
 		A15CC5D2A5838782466059CB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		A18DFE08E2648A7E404A4C73 /* ScoreBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBarView.swift; sourceTree = "<group>"; };
 		A390E3EC1756B60537B807AC /* CardGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGridView.swift; sourceTree = "<group>"; };
+		A47B6ED31E6FE620A3739429 /* MatchmakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchmakingView.swift; sourceTree = "<group>"; };
 		AAD35DE3F42AF0B8BC3200F5 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		AB04634D8A6455BC16449E96 /* animal_pig.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_pig.mp3; sourceTree = "<group>"; };
 		AD28139DAEA495BC2FAE89F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AD759EDF268B49AC0EA4F993 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AD759EDF268B49AC0EA4F993 /* .gitignore */ = {isa = PBXFileReference; path = .gitignore; sourceTree = "<group>"; };
 		B44F5C6A1841BFC7CD34D3A2 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		B62A86973A130A1B6E997651 /* animal_duck.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_duck.mp3; sourceTree = "<group>"; };
+		BAB8B706BBE51FB895FC925F /* SoundMemory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SoundMemory.entitlements; sourceTree = "<group>"; };
 		C3B7987DB6B4F6AF7B418C39 /* SoundTone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTone.swift; sourceTree = "<group>"; };
 		C9E6D42B178FEF7D5B44469C /* animal_horse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_horse.mp3; sourceTree = "<group>"; };
 		D326B5B647764CA93342C79D /* SoundMemoryTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SoundMemoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,8 +117,20 @@
 		E094A564FA8CB7A7E52F6D4D /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		EF60542A58056D8DF6F93A91 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
 		F4DF2708292CE991AC3FE1FA /* animal_dog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_dog.mp3; sourceTree = "<group>"; };
+		F9285C17F9DE0329518F0051 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
 		FFE0063F1C3A840761055D18 /* SoundMemoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundMemoryApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45AC27B3F045A3BBA8EA231B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FD8C56C6D96C371493616F9 /* GameKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		05011C825A993F190F8FF762 /* Views */ = {
@@ -120,6 +140,7 @@
 				E11C522A92E4AEF15A58680F /* Difficulty */,
 				F909D0AAFDC00BE9066C551B /* Game */,
 				28651C509C47082164419650 /* Home */,
+				A7F3A7B327FF11AF7C409404 /* Multiplayer */,
 				149150E11D7113CE471A2025 /* Pass */,
 				A1532D15C2C2510E0F50AC65 /* Theme */,
 			);
@@ -156,6 +177,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		5C78FEC0FA0763B5DB17A259 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44A3EABCF20E88FC127C9F0B /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		787AD4B1A7B89F75404433E8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,8 +200,18 @@
 			children = (
 				DBCAB90CA21505BB197AB421 /* SoundMemory */,
 				F5205023BD3134B5189D0D19 /* SoundMemoryTests */,
+				5C78FEC0FA0763B5DB17A259 /* Frameworks */,
 				A53301DF087C96CB66AD6B08 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		9131214BD162CC3180E4530E /* Multiplayer */ = {
+			isa = PBXGroup;
+			children = (
+				F9285C17F9DE0329518F0051 /* GameCenterManager.swift */,
+				630E45A0490FBC383644B179 /* MatchMessage.swift */,
+			);
+			path = Multiplayer;
 			sourceTree = "<group>";
 		};
 		A1532D15C2C2510E0F50AC65 /* Theme */ = {
@@ -190,6 +229,14 @@
 				D326B5B647764CA93342C79D /* SoundMemoryTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A7F3A7B327FF11AF7C409404 /* Multiplayer */ = {
+			isa = PBXGroup;
+			children = (
+				A47B6ED31E6FE620A3739429 /* MatchmakingView.swift */,
+			);
+			path = Multiplayer;
 			sourceTree = "<group>";
 		};
 		A90CDA43CA961DA00C49D301 /* App */ = {
@@ -238,9 +285,11 @@
 				AD28139DAEA495BC2FAE89F0 /* Assets.xcassets */,
 				845781AB0668A5820EE1A400 /* Info.plist */,
 				1751F195FC047BB6BF45B954 /* README.md */,
+				BAB8B706BBE51FB895FC925F /* SoundMemory.entitlements */,
 				A90CDA43CA961DA00C49D301 /* App */,
 				E6DFEE6AA42D4D826246B4BD /* Audio */,
 				150BFB3C79130BA2E34905E3 /* Models */,
+				9131214BD162CC3180E4530E /* Multiplayer */,
 				787AD4B1A7B89F75404433E8 /* Utilities */,
 				DB84937EDE6B8BA97EBC945C /* ViewModels */,
 				05011C825A993F190F8FF762 /* Views */,
@@ -295,6 +344,7 @@
 			buildPhases = (
 				7677AE8034BC70159CF1BBFA /* Sources */,
 				13062980E75FE484F495820B /* Resources */,
+				45AC27B3F045A3BBA8EA231B /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -335,6 +385,7 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					0C5DAA870F8BC525931BAF4F = {
+						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -406,12 +457,15 @@
 				DB8E4B2C7E7B68AE60CDA8F4 /* Constants.swift in Sources */,
 				7C49F4D89847F5E603BBCC7A /* Difficulty.swift in Sources */,
 				3641DD58BA707EF4ACF9368D /* DifficultyView.swift in Sources */,
+				31425A18570F8F839F1326A9 /* GameCenterManager.swift in Sources */,
 				B1FFA2D9D7B502730922A812 /* GameOverView.swift in Sources */,
 				26FFE1BEE78409652C9B7020 /* GameState.swift in Sources */,
 				20C2DAF3E961E8558746E894 /* GameView.swift in Sources */,
 				938874DB06FEDB37A4438F09 /* GameViewModel.swift in Sources */,
 				31660F6367605D9C33C8E1C3 /* HapticManager.swift in Sources */,
 				498F0758C6DA2F45056A4FCD /* HomeView.swift in Sources */,
+				5CC38889EFF41DDAB008D561 /* MatchMessage.swift in Sources */,
+				B2E64A9E8251C8423132ACF6 /* MatchmakingView.swift in Sources */,
 				EB9AE63BE0928B2703EDE40D /* PassView.swift in Sources */,
 				52E94C979031DE2FD76FC743 /* Player.swift in Sources */,
 				ABD6CF2C5BCB29C27528CFCC /* PlayerMode.swift in Sources */,
@@ -526,9 +580,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SoundMemory/SoundMemory.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZR4H9PTM48;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SoundMemory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -622,9 +677,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SoundMemory/SoundMemory.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZR4H9PTM48;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SoundMemory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

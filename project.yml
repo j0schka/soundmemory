@@ -28,6 +28,8 @@ targets:
     platform: iOS
     sources:
       - path: SoundMemory
+    dependencies:
+      - sdk: GameKit.framework
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: io.github.j0schka.ohrenspiel
@@ -37,6 +39,7 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         TARGETED_DEVICE_FAMILY: 1
         SUPPORTS_IPAD: NO
+        CODE_SIGN_ENTITLEMENTS: SoundMemory/SoundMemory.entitlements
       configs:
         Debug:
           TARGETED_DEVICE_FAMILY: 1

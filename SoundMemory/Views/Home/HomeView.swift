@@ -62,6 +62,23 @@ struct HomeView: View {
                             .clipShape(Capsule())
                             .shadow(color: Color.coral.opacity(0.35), radius: 6, x: 0, y: 4)
                         }
+
+                        Button {
+                            env.navigationPath.append(Route.theme(.online))
+                        } label: {
+                            HStack(spacing: 8) {
+                                Image(systemName: "wifi")
+                                Text(env.gcManager.isAuthenticated ? "Online" : "Online (Sign in to Game Center)")
+                            }
+                            .font(.system(size: 20, weight: .semibold, design: .rounded))
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 16)
+                            .background(env.gcManager.isAuthenticated ? Color.sky : Color.sky.opacity(0.4))
+                            .foregroundStyle(.white)
+                            .clipShape(Capsule())
+                            .shadow(color: Color.sky.opacity(0.35), radius: 6, x: 0, y: 4)
+                        }
+                        .disabled(!env.gcManager.isAuthenticated)
                     }
                     .padding(.horizontal, 40)
                     .padding(.bottom, 60)
@@ -72,9 +89,23 @@ struct HomeView: View {
                 case .theme(let mode):
                     ThemeView(playerMode: mode)
                 case .difficulty(let theme, let mode):
-                    DifficultyView(theme: theme, playerMode: mode)
+                    if mode == .online {
+                        // For online mode, difficulty selection goes to matchmaking
+                        DifficultyView(theme: theme, playerMode: mode)
+                    } else {
+                        DifficultyView(theme: theme, playerMode: mode)
+                    }
+                case .matchmaking(let difficulty, let theme):
+                    MatchmakingView(difficulty: difficulty, theme: theme)
                 case .game(let difficulty, let theme, let mode):
-                    GameView(difficulty: difficulty, theme: theme, playerMode: mode, audio: env.audio)
+                    GameView(
+                        difficulty: difficulty,
+                        theme: theme,
+                        playerMode: mode,
+                        audio: env.audio,
+                        gcManager: mode == .online ? env.gcManager : nil,
+                        initialCards: mode == .online ? env.pendingOnlineDeck : nil
+                    )
                 }
             }
         }

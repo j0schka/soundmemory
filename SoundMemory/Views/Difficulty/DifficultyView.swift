@@ -14,7 +14,11 @@ struct DifficultyView: View {
 
             ForEach(Difficulty.allCases) { difficulty in
                 DifficultyButton(difficulty: difficulty) {
-                    env.navigationPath.append(Route.game(difficulty, theme, playerMode))
+                    if playerMode == .online {
+                        env.navigationPath.append(Route.matchmaking(difficulty, theme))
+                    } else {
+                        env.navigationPath.append(Route.game(difficulty, theme, playerMode))
+                    }
                 }
             }
 

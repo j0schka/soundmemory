@@ -18,6 +18,7 @@ struct GameState {
     var difficulty: Difficulty
     var theme: SoundTheme
     var playerMode: PlayerMode
+    var isLocalPlayerHost: Bool = true   // online mode only: host = currentPlayerIndex 0
 
     var currentPlayer: Player { players[currentPlayerIndex] }
 

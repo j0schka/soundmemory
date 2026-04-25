@@ -8,6 +8,7 @@ struct SoundMemoryApp: App {
         WindowGroup {
             HomeView()
                 .environmentObject(env)
+                .task { env.gcManager.authenticate() }
         }
     }
 }
