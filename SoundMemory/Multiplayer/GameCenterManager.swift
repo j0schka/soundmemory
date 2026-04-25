@@ -12,7 +12,7 @@ enum OnlineMatchEvent: Equatable {
         switch (lhs, rhs) {
         case (.cardTapped(let a), .cardTapped(let b)): return a == b
         case (.playerDisconnected, .playerDisconnected): return true
-        case (.gameSetup, .gameSetup): return false  // always treat as new
+        case (.gameSetup, .gameSetup): return false  // always treat as new event
         default: return false
         }
     }
@@ -27,6 +27,9 @@ final class GameCenterManager: NSObject, ObservableObject {
     @Published private(set) var localPlayerName = ""
     @Published var latestEvent: OnlineMatchEvent?
 
+    // SwiftUI sets this so we can present GK's auth view controller
+    var presentationAnchor: UIWindow?
+
     private(set) var match: GKMatch?
     private(set) var isHost = false
     private(set) var opponentDisplayName = "Opponent"
@@ -36,13 +39,20 @@ final class GameCenterManager: NSObject, ObservableObject {
     func authenticate() {
         GKLocalPlayer.local.authenticateHandler = { [weak self] viewController, _ in
             Task { @MainActor [weak self] in
+                guard let self else { return }
                 if let vc = viewController {
-                    UIApplication.shared.topViewController?.present(vc, animated: true)
+                    // Present Game Center sign-in UI
+                    let anchor = self.presentationAnchor
+                        ?? UIApplication.shared.connectedScenes
+                            .compactMap { $0 as? UIWindowScene }
+                            .flatMap { $0.windows }
+                            .first { $0.isKeyWindow }
+                    anchor?.rootViewController?.topPresented.present(vc, animated: true)
                 } else if GKLocalPlayer.local.isAuthenticated {
-                    self?.isAuthenticated = true
-                    self?.localPlayerName = GKLocalPlayer.local.displayName
+                    self.isAuthenticated = true
+                    self.localPlayerName = GKLocalPlayer.local.displayName
                 } else {
-                    self?.isAuthenticated = false
+                    self.isAuthenticated = false
                 }
             }
         }
@@ -60,8 +70,7 @@ final class GameCenterManager: NSObject, ObservableObject {
 
     func send(_ message: MatchMessage) {
         guard let match else { return }
-        let data = message.encode()
-        try? match.sendData(toAllPlayers: data, with: .reliable)
+        try? match.sendData(toAllPlayers: message.encode(), with: .reliable)
     }
 
     func endMatch() {
@@ -104,23 +113,10 @@ extension GameCenterManager: GKMatchDelegate {
     }
 }
 
-// MARK: - UIApplication helper
-
-private extension UIApplication {
-    var topViewController: UIViewController? {
-        connectedScenes
-            .compactMap { $0 as? UIWindowScene }
-            .flatMap { $0.windows }
-            .first { $0.isKeyWindow }?
-            .rootViewController?
-            .topMost
-    }
-}
+// MARK: - UIViewController helper
 
 private extension UIViewController {
-    var topMost: UIViewController {
-        if let presented = presentedViewController { return presented.topMost }
-        if let nav = self as? UINavigationController { return nav.visibleViewController?.topMost ?? self }
-        return self
+    var topPresented: UIViewController {
+        presentedViewController?.topPresented ?? self
     }
 }

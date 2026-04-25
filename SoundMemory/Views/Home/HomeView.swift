@@ -64,21 +64,25 @@ struct HomeView: View {
                         }
 
                         Button {
-                            env.navigationPath.append(Route.theme(.online))
+                            if env.gcManager.isAuthenticated {
+                                env.navigationPath.append(Route.theme(.online))
+                            } else {
+                                // Trigger auth — GK will present its own sign-in UI
+                                env.gcManager.authenticate()
+                            }
                         } label: {
                             HStack(spacing: 8) {
                                 Image(systemName: "wifi")
-                                Text(env.gcManager.isAuthenticated ? "Online" : "Online (Sign in to Game Center)")
+                                Text("Online")
                             }
                             .font(.system(size: 20, weight: .semibold, design: .rounded))
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 16)
-                            .background(env.gcManager.isAuthenticated ? Color.sky : Color.sky.opacity(0.4))
+                            .background(Color.sky)
                             .foregroundStyle(.white)
                             .clipShape(Capsule())
                             .shadow(color: Color.sky.opacity(0.35), radius: 6, x: 0, y: 4)
                         }
-                        .disabled(!env.gcManager.isAuthenticated)
                     }
                     .padding(.horizontal, 40)
                     .padding(.bottom, 60)
