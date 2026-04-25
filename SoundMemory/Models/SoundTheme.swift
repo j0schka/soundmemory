@@ -6,10 +6,10 @@ struct SoundDescriptor {
 }
 
 enum SoundTheme: String, CaseIterable, Identifiable, Hashable {
-    case musical
-    case city
     case animals
+    case city
     case household
+    case musical
 
     var id: String { rawValue }
     var displayName: String { rawValue.capitalized }
