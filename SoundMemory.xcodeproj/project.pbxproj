@@ -20,6 +20,18 @@
 		31660F6367605D9C33C8E1C3 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971493340B6DFD26048C1CB7 /* HapticManager.swift */; };
 		32ACE86D515E608581DB71E2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1751F195FC047BB6BF45B954 /* README.md */; };
 		3641DD58BA707EF4ACF9368D /* DifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E9CD4A24AD5173218F340 /* DifficultyView.swift */; };
+		40D7EA0C2F9CFC1D00295C9E /* city_bicycle_bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA002F9CFC1D00295C9E /* city_bicycle_bell.mp3 */; };
+		40D7EA0D2F9CFC1D00295C9E /* city_car_horn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA022F9CFC1D00295C9E /* city_car_horn.mp3 */; };
+		40D7EA0E2F9CFC1D00295C9E /* city_bus_doors.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA012F9CFC1D00295C9E /* city_bus_doors.mp3 */; };
+		40D7EA0F2F9CFC1D00295C9E /* city_subway_chime.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA082F9CFC1D00295C9E /* city_subway_chime.mp3 */; };
+		40D7EA102F9CFC1D00295C9E /* city_jackhammer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA062F9CFC1D00295C9E /* city_jackhammer.mp3 */; };
+		40D7EA112F9CFC1D00295C9E /* city_police_siren.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA072F9CFC1D00295C9E /* city_police_siren.mp3 */; };
+		40D7EA122F9CFC1D00295C9E /* city_subway_door.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA092F9CFC1D00295C9E /* city_subway_door.mp3 */; };
+		40D7EA132F9CFC1D00295C9E /* city_train_whistle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA0A2F9CFC1D00295C9E /* city_train_whistle.mp3 */; };
+		40D7EA142F9CFC1D00295C9E /* city_cash_register.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA032F9CFC1D00295C9E /* city_cash_register.mp3 */; };
+		40D7EA152F9CFC1D00295C9E /* city_double_honk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA052F9CFC1D00295C9E /* city_double_honk.mp3 */; };
+		40D7EA162F9CFC1D00295C9E /* city_church_bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA042F9CFC1D00295C9E /* city_church_bell.mp3 */; };
+		40D7EA172F9CFC1D00295C9E /* city_vintage_horn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40D7EA0B2F9CFC1D00295C9E /* city_vintage_horn.mp3 */; };
 		498F0758C6DA2F45056A4FCD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1669E27AEC55BFADFAAA49F3 /* HomeView.swift */; };
 		52E94C979031DE2FD76FC743 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487FDF326E43F88D46EBB055 /* Player.swift */; };
 		557281EE25D2F36E2190883B /* SoundTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3C96BEFD8F1AA874F9754 /* SoundTheme.swift */; };
@@ -78,6 +90,18 @@
 		2C095CC036ED68219AA6909F /* animal_frog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_frog.mp3; sourceTree = "<group>"; };
 		2E3A89F6BEF0C69EA796AFFA /* SoundMemory.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SoundMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F51DCC18190920543E94785 /* animal_bird.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_bird.mp3; sourceTree = "<group>"; };
+		40D7EA002F9CFC1D00295C9E /* city_bicycle_bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_bicycle_bell.mp3; sourceTree = "<group>"; };
+		40D7EA012F9CFC1D00295C9E /* city_bus_doors.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_bus_doors.mp3; sourceTree = "<group>"; };
+		40D7EA022F9CFC1D00295C9E /* city_car_horn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_car_horn.mp3; sourceTree = "<group>"; };
+		40D7EA032F9CFC1D00295C9E /* city_cash_register.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_cash_register.mp3; sourceTree = "<group>"; };
+		40D7EA042F9CFC1D00295C9E /* city_church_bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_church_bell.mp3; sourceTree = "<group>"; };
+		40D7EA052F9CFC1D00295C9E /* city_double_honk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_double_honk.mp3; sourceTree = "<group>"; };
+		40D7EA062F9CFC1D00295C9E /* city_jackhammer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_jackhammer.mp3; sourceTree = "<group>"; };
+		40D7EA072F9CFC1D00295C9E /* city_police_siren.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_police_siren.mp3; sourceTree = "<group>"; };
+		40D7EA082F9CFC1D00295C9E /* city_subway_chime.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_subway_chime.mp3; sourceTree = "<group>"; };
+		40D7EA092F9CFC1D00295C9E /* city_subway_door.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_subway_door.mp3; sourceTree = "<group>"; };
+		40D7EA0A2F9CFC1D00295C9E /* city_train_whistle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_train_whistle.mp3; sourceTree = "<group>"; };
+		40D7EA0B2F9CFC1D00295C9E /* city_vintage_horn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = city_vintage_horn.mp3; sourceTree = "<group>"; };
 		44A3EABCF20E88FC127C9F0B /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		487FDF326E43F88D46EBB055 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		54F3C96BEFD8F1AA874F9754 /* SoundTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTheme.swift; sourceTree = "<group>"; };
@@ -103,7 +127,7 @@
 		AAD35DE3F42AF0B8BC3200F5 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		AB04634D8A6455BC16449E96 /* animal_pig.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_pig.mp3; sourceTree = "<group>"; };
 		AD28139DAEA495BC2FAE89F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AD759EDF268B49AC0EA4F993 /* .gitignore */ = {isa = PBXFileReference; path = .gitignore; sourceTree = "<group>"; };
+		AD759EDF268B49AC0EA4F993 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B44F5C6A1841BFC7CD34D3A2 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		B62A86973A130A1B6E997651 /* animal_duck.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_duck.mp3; sourceTree = "<group>"; };
 		BAB8B706BBE51FB895FC925F /* SoundMemory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SoundMemory.entitlements; sourceTree = "<group>"; };
@@ -282,6 +306,18 @@
 				DAF478B066F8EDCE03D3BF9C /* animal_owl.mp3 */,
 				AB04634D8A6455BC16449E96 /* animal_pig.mp3 */,
 				2A6808280536BF03552E0C8D /* animal_wolf.mp3 */,
+				40D7EA002F9CFC1D00295C9E /* city_bicycle_bell.mp3 */,
+				40D7EA012F9CFC1D00295C9E /* city_bus_doors.mp3 */,
+				40D7EA022F9CFC1D00295C9E /* city_car_horn.mp3 */,
+				40D7EA032F9CFC1D00295C9E /* city_cash_register.mp3 */,
+				40D7EA042F9CFC1D00295C9E /* city_church_bell.mp3 */,
+				40D7EA052F9CFC1D00295C9E /* city_double_honk.mp3 */,
+				40D7EA062F9CFC1D00295C9E /* city_jackhammer.mp3 */,
+				40D7EA072F9CFC1D00295C9E /* city_police_siren.mp3 */,
+				40D7EA082F9CFC1D00295C9E /* city_subway_chime.mp3 */,
+				40D7EA092F9CFC1D00295C9E /* city_subway_door.mp3 */,
+				40D7EA0A2F9CFC1D00295C9E /* city_train_whistle.mp3 */,
+				40D7EA0B2F9CFC1D00295C9E /* city_vintage_horn.mp3 */,
 				AD28139DAEA495BC2FAE89F0 /* Assets.xcassets */,
 				845781AB0668A5820EE1A400 /* Info.plist */,
 				1751F195FC047BB6BF45B954 /* README.md */,
@@ -427,6 +463,18 @@
 				EABDBE43861D049D2C096DE4 /* animal_horse.mp3 in Resources */,
 				C02025FAE4A3359BAE7E6BC8 /* animal_lion.mp3 in Resources */,
 				9D6CAD097A9F852E96F4C1F8 /* animal_owl.mp3 in Resources */,
+				40D7EA0C2F9CFC1D00295C9E /* city_bicycle_bell.mp3 in Resources */,
+				40D7EA0D2F9CFC1D00295C9E /* city_car_horn.mp3 in Resources */,
+				40D7EA0E2F9CFC1D00295C9E /* city_bus_doors.mp3 in Resources */,
+				40D7EA0F2F9CFC1D00295C9E /* city_subway_chime.mp3 in Resources */,
+				40D7EA102F9CFC1D00295C9E /* city_jackhammer.mp3 in Resources */,
+				40D7EA112F9CFC1D00295C9E /* city_police_siren.mp3 in Resources */,
+				40D7EA122F9CFC1D00295C9E /* city_subway_door.mp3 in Resources */,
+				40D7EA132F9CFC1D00295C9E /* city_train_whistle.mp3 in Resources */,
+				40D7EA142F9CFC1D00295C9E /* city_cash_register.mp3 in Resources */,
+				40D7EA152F9CFC1D00295C9E /* city_double_honk.mp3 in Resources */,
+				40D7EA162F9CFC1D00295C9E /* city_church_bell.mp3 in Resources */,
+				40D7EA172F9CFC1D00295C9E /* city_vintage_horn.mp3 in Resources */,
 				F703727CFC2C6B275C0FB20F /* animal_pig.mp3 in Resources */,
 				CDBA96CB1A1084AC393FC5CE /* animal_wolf.mp3 in Resources */,
 			);

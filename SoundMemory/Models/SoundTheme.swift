@@ -66,21 +66,21 @@ private let musicalSounds: [SoundDescriptor] = [
     SoundDescriptor(name: "Sol²", source: .synthesized(.tone(783.99, duration: 0.70))),
 ]
 
-// MARK: - City (12 synthesised urban sounds)
+// MARK: - City (12 real audio files from Pixabay)
 
 private let citySounds: [SoundDescriptor] = [
-    SoundDescriptor(name: "Car Horn",     source: .synthesized(SynthConfig(layers: [.sine(370, amp: 0.55), .sine(466, amp: 0.45)], duration: 0.65, attackTime: 0.025, releaseTime: 0.100))),
-    SoundDescriptor(name: "Siren",        source: .synthesized(SynthConfig(layers: [.fm(carrier: 865, depth: 95, rate: 1.3, amp: 0.9)], duration: 0.9, attackTime: 0.020, releaseTime: 0.120))),
-    SoundDescriptor(name: "Train",        source: .synthesized(SynthConfig(layers: [.sine(784, amp: 0.65), .sine(1568, amp: 0.25)], duration: 0.85, attackTime: 0.050, releaseTime: 0.150))),
-    SoundDescriptor(name: "Bicycle Bell", source: .synthesized(SynthConfig(layers: [.sine(1319, amp: 0.7), .sine(2638, amp: 0.2)], duration: 0.55, attackTime: 0.005, releaseTime: 0.450))),
-    SoundDescriptor(name: "Subway",       source: .synthesized(SynthConfig(layers: [.sine(80, amp: 0.55), .noise(amp: 0.30)], duration: 0.70, attackTime: 0.080, releaseTime: 0.120))),
-    SoundDescriptor(name: "Jackhammer",   source: .synthesized(SynthConfig(layers: [.pulsedNoise(pulseRate: 14, amp: 0.85)], duration: 0.70, attackTime: 0.010, releaseTime: 0.060))),
-    SoundDescriptor(name: "Cash Register",source: .synthesized(SynthConfig(layers: [.sine(1047, amp: 0.60), .sine(2093, amp: 0.28), .sine(3140, amp: 0.10)], duration: 0.60, attackTime: 0.005, releaseTime: 0.380))),
-    SoundDescriptor(name: "Street Bell",  source: .synthesized(SynthConfig(layers: [.sine(880, amp: 0.65), .sine(1320, amp: 0.20)], duration: 0.90, attackTime: 0.005, releaseTime: 0.500))),
-    SoundDescriptor(name: "Taxi Honk",    source: .synthesized(SynthConfig(layers: [.sine(392, amp: 0.90)], duration: 0.40, attackTime: 0.030, releaseTime: 0.080))),
-    SoundDescriptor(name: "Truck Horn",   source: .synthesized(SynthConfig(layers: [.sine(110, amp: 0.50), .sine(147, amp: 0.45)], duration: 0.80, attackTime: 0.040, releaseTime: 0.120))),
-    SoundDescriptor(name: "Door Buzzer",  source: .synthesized(SynthConfig(layers: [.fm(carrier: 160, depth: 80, rate: 80, amp: 0.85)], duration: 0.50, attackTime: 0.008, releaseTime: 0.060))),
-    SoundDescriptor(name: "Steam Hiss",   source: .synthesized(SynthConfig(layers: [.noise(amp: 0.80)], duration: 0.65, attackTime: 0.120, releaseTime: 0.200))),
+    SoundDescriptor(name: "Car Horn",     source: .file("city_car_horn")),
+    SoundDescriptor(name: "Double Honk",  source: .file("city_double_honk")),
+    SoundDescriptor(name: "Police Siren", source: .file("city_police_siren")),
+    SoundDescriptor(name: "Bicycle Bell", source: .file("city_bicycle_bell")),
+    SoundDescriptor(name: "Cash Register",source: .file("city_cash_register")),
+    SoundDescriptor(name: "Bus Doors",    source: .file("city_bus_doors")),
+    SoundDescriptor(name: "Church Bell",  source: .file("city_church_bell")),
+    SoundDescriptor(name: "Subway Chime", source: .file("city_subway_chime")),
+    SoundDescriptor(name: "Subway Door",  source: .file("city_subway_door")),
+    SoundDescriptor(name: "Train Whistle",source: .file("city_train_whistle")),
+    SoundDescriptor(name: "Jackhammer",   source: .file("city_jackhammer")),
+    SoundDescriptor(name: "Vintage Horn", source: .file("city_vintage_horn")),
 ]
 
 // MARK: - Animals (12 real audio files bundled in the app)
