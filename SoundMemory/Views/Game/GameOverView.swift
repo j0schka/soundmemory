@@ -51,11 +51,12 @@ struct GameOverView: View {
         .onAppear {
             cardAppeared = true
             HapticManager.notification(.success)
+            // Count the round that just finished (not when the next one starts)
+            env.subscriptionManager.recordRoundStarted()
         }
         .fullScreenCover(isPresented: $showPaywall) {
             PaywallView {
                 showPaywall = false
-                env.subscriptionManager.recordRoundStarted()
                 dismiss()
                 onPlayAgain()
             } onDismiss: {
@@ -161,7 +162,6 @@ struct GameOverView: View {
         VStack(spacing: 12) {
             Button {
                 if env.subscriptionManager.canPlay {
-                    env.subscriptionManager.recordRoundStarted()
                     dismiss()
                     onPlayAgain()
                 } else {

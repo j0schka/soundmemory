@@ -18,7 +18,6 @@ struct DifficultyView: View {
             ForEach(Difficulty.allCases) { difficulty in
                 DifficultyButton(difficulty: difficulty) {
                     if env.subscriptionManager.canPlay {
-                        env.subscriptionManager.recordRoundStarted()
                         navigate(difficulty: difficulty)
                     } else {
                         pendingDifficulty = difficulty
@@ -35,10 +34,9 @@ struct DifficultyView: View {
         .navigationBarTitleDisplayMode(.inline)
         .fullScreenCover(isPresented: $showPaywall) {
             PaywallView {
-                // Purchased — record round and proceed
+                // Purchased — proceed (round will be recorded when the game finishes)
                 showPaywall = false
                 if let d = pendingDifficulty {
-                    env.subscriptionManager.recordRoundStarted()
                     navigate(difficulty: d)
                 }
             } onDismiss: {
