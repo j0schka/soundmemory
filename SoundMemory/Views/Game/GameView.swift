@@ -38,16 +38,21 @@ struct GameView: View {
                 OnlineTurnBanner(isLocalTurn: vm.isLocalTurn, opponentName: vm.opponentName)
             }
 
-            Spacer(minLength: 0)
-
-            CardGridView(
-                cards: vm.state.cards,
-                columns: difficulty.columns,
-                pulsing: vm.lastMatchedIDs,
-                onCardTap: { vm.cardTapped($0) }
-            )
-
-            Spacer(minLength: 0)
+            GeometryReader { geo in
+                ScrollView(showsIndicators: false) {
+                    VStack {
+                        Spacer(minLength: 0)
+                        CardGridView(
+                            cards: vm.state.cards,
+                            columns: difficulty.columns,
+                            pulsing: vm.lastMatchedIDs,
+                            onCardTap: { vm.cardTapped($0) }
+                        )
+                        Spacer(minLength: 0)
+                    }
+                    .frame(minHeight: geo.size.height)
+                }
+            }
         }
         .padding(.vertical)
         .background(Color.cream.ignoresSafeArea())
