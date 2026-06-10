@@ -10,9 +10,13 @@ final class AudioEngine {
     private var cachedBuffers: [Int: AVAudioPCMBuffer] = [:]
 
     init() {
+        // Set the category now so it's ready, but do NOT activate the session yet.
+        // Activation (and engine start) is deferred to the first play() call so that
+        // background audio (Spotify, Podcasts, etc.) is not interrupted on launch.
         configureSession()
 
-        // Build the graph once — never change it again
+        // Build the graph once — never change it again.
+        // This does not require an active audio session.
         let mixer = engine.mainMixerNode
         for _ in 0..<Self.nodeCount {
             let node = AVAudioPlayerNode()
@@ -20,11 +24,6 @@ final class AudioEngine {
             engine.connect(node, to: mixer, format: Self.standardFormat)
             nodes.append(node)
         }
-
-        startEngine()
-
-        // Pre-start all nodes so buffers can be scheduled at any time
-        nodes.forEach { $0.play() }
     }
 
     // Only updates buffers — no graph changes, no HAL reconfiguration
@@ -41,11 +40,15 @@ final class AudioEngine {
 
     func play(toneID: Int) {
         guard let buffer = cachedBuffers[toneID], toneID < nodes.count else { return }
+        ensureEngineRunning()
         nodes[toneID].scheduleBuffer(buffer, at: nil, options: .interrupts)
     }
 
     func stopAll() {
         nodes.forEach { $0.stop() }
+        // Relinquish the audio session so background audio (Spotify, Podcasts, etc.)
+        // can resume between games.
+        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
     }
 
     // MARK: - Private
@@ -94,6 +97,17 @@ final class AudioEngine {
         return status != .error ? outputBuffer : nil
     }
 
+    /// Activates the audio session and starts the engine + nodes on first play.
+    /// Safe to call repeatedly — does nothing if everything is already running.
+    private func ensureEngineRunning() {
+        if !engine.isRunning {
+            try? AVAudioSession.sharedInstance().setActive(true)
+            startEngine()
+        }
+        // Nodes may have been stopped by stopAll() — restart any that aren't running.
+        nodes.forEach { if !$0.isPlaying { $0.play() } }
+    }
+
     private func startEngine() {
         guard !engine.isRunning else { return }
         do { try engine.start() } catch {
@@ -102,8 +116,9 @@ final class AudioEngine {
     }
 
     private func configureSession() {
-        let session = AVAudioSession.sharedInstance()
-        try? session.setCategory(.playback, mode: .default)
-        try? session.setActive(true)
+        // Set category only — do NOT activate the session here.
+        // Activation is deferred to ensureEngineRunning() so background audio
+        // is not interrupted until the user actually starts playing a sound.
+        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
     }
 }
