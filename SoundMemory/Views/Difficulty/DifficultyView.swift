@@ -5,9 +5,6 @@ struct DifficultyView: View {
     let playerMode: PlayerMode
     @EnvironmentObject private var env: AppEnvironment
 
-    @State private var showPaywall = false
-    @State private var pendingDifficulty: Difficulty? = nil
-
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("How many cards?")
@@ -17,33 +14,18 @@ struct DifficultyView: View {
 
             ForEach(Difficulty.allCases) { difficulty in
                 DifficultyButton(difficulty: difficulty) {
-                    if env.subscriptionManager.canPlay {
-                        navigate(difficulty: difficulty)
-                    } else {
-                        pendingDifficulty = difficulty
-                        showPaywall = true
-                    }
+                    navigate(difficulty: difficulty)
                 }
             }
 
             Spacer()
         }
         .padding(.horizontal, 16)
+        .frame(maxWidth: 430)
+        .frame(maxWidth: .infinity, alignment: .center)
         .background(Color.cream.ignoresSafeArea())
         .navigationTitle(theme.displayName)
         .navigationBarTitleDisplayMode(.inline)
-        .fullScreenCover(isPresented: $showPaywall) {
-            PaywallView {
-                // Purchased — proceed (round will be recorded when the game finishes)
-                showPaywall = false
-                if let d = pendingDifficulty {
-                    navigate(difficulty: d)
-                }
-            } onDismiss: {
-                showPaywall = false
-                env.navigationPath = NavigationPath()
-            }
-        }
     }
 
     private func navigate(difficulty: Difficulty) {

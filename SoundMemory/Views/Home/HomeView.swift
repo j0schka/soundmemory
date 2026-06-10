@@ -30,9 +30,6 @@ struct HomeView: View {
 
                     Spacer()
 
-                    RoundsRemainingBadge(sub: env.subscriptionManager)
-                        .padding(.bottom, 4)
-
                     VStack(spacing: 12) {
                         Button {
                             env.navigationPath.append(Route.theme(.single))
@@ -88,6 +85,7 @@ struct HomeView: View {
                         }
                     }
                     .padding(.horizontal, 40)
+                    .frame(maxWidth: 430)
                     .padding(.bottom, 60)
                 }
             }
@@ -96,12 +94,7 @@ struct HomeView: View {
                 case .theme(let mode):
                     ThemeView(playerMode: mode)
                 case .difficulty(let theme, let mode):
-                    if mode == .online {
-                        // For online mode, difficulty selection goes to matchmaking
-                        DifficultyView(theme: theme, playerMode: mode)
-                    } else {
-                        DifficultyView(theme: theme, playerMode: mode)
-                    }
+                    DifficultyView(theme: theme, playerMode: mode)
                 case .matchmaking(let difficulty, let theme):
                     MatchmakingView(difficulty: difficulty, theme: theme)
                 case .game(let difficulty, let theme, let mode):
@@ -115,37 +108,6 @@ struct HomeView: View {
                     )
                 }
             }
-        }
-    }
-}
-
-// MARK: - Rounds badge
-
-private struct RoundsRemainingBadge: View {
-    @ObservedObject var sub: SubscriptionManager
-
-    var body: some View {
-        if sub.isSubscribed {
-            Label("Premium — unlimited play", systemImage: "star.fill")
-                .font(.system(size: 13, weight: .medium))
-                .foregroundStyle(Color.gold)
-                .padding(.horizontal, 14)
-                .padding(.vertical, 7)
-                .background(Color.gold.opacity(0.12))
-                .clipShape(Capsule())
-        } else {
-            let remaining = sub.roundsRemaining
-            let color: Color = remaining > 0 ? Color.sage : Color.coral
-            Label(remaining > 0
-                  ? "\(remaining) of \(SubscriptionManager.freeLimit) free rounds left today"
-                  : "No free rounds left today",
-                  systemImage: remaining > 0 ? "play.circle" : "lock.fill")
-                .font(.system(size: 13, weight: .medium))
-                .foregroundStyle(color)
-                .padding(.horizontal, 14)
-                .padding(.vertical, 7)
-                .background(color.opacity(0.12))
-                .clipShape(Capsule())
         }
     }
 }

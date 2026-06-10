@@ -30,7 +30,6 @@ targets:
       - path: SoundMemory
     dependencies:
       - sdk: GameKit.framework
-      - sdk: StoreKit.framework
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: io.github.j0schka.ohrenspiel
