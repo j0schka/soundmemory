@@ -136,6 +136,20 @@ Alle Punkte: **Keine**
 
 ---
 
+## Anmerkungen für den App-Prüfer
+
+```
+Bitte Ton einschalten — das Spiel basiert ausschließlich auf Klängen.
+
+Solo- und 2-Spieler-Modus: kein Login erforderlich, sofort spielbar.
+
+Online-Modus: erfordert eine aktive Game Center-Anmeldung und eine zweite Verbindung (zweites Gerät oder Simulator). Falls kein zweiter Spieler verfügbar ist, empfehlen wir den Test über Solo- oder 2-Spieler-Modus — der Spielablauf ist identisch.
+
+Die App enthält keine In-App-Käufe, keine Werbung und keine externen Accounts.
+```
+
+---
+
 ## Bewertungs- & Rezensionsanfragen
 
 In-App-Bewertungsdialog: **nicht implementiert** — kann über `SKStoreReviewController` nachgerüstet werden.
