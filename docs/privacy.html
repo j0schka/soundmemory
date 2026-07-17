@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Datenschutz – Ohrenspiel</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: #faf9f7;
+      color: #3d405b;
+      line-height: 1.7;
+      padding: 48px 24px 96px;
+    }
+
+    .wrap {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+
+    .wave {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 28px;
+    }
+
+    .wave span {
+      display: block;
+      width: 4px;
+      border-radius: 99px;
+    }
+
+    .app-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #3d405b;
+      letter-spacing: -0.3px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .updated {
+      font-size: 14px;
+      color: #9a9fb5;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 36px 0 8px;
+      color: #3d405b;
+    }
+
+    p {
+      font-size: 15px;
+      color: #555870;
+      margin-bottom: 12px;
+    }
+
+    a {
+      color: #e07a5f;
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .badge {
+      display: inline-block;
+      background: #e8f5ee;
+      color: #3a8a5a;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ede9e3;
+      margin: 40px 0;
+    }
+
+    .lang-toggle {
+      margin-bottom: 40px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .lang-btn {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1.5px solid #ddd9d3;
+      background: white;
+      color: #9a9fb5;
+      cursor: pointer;
+    }
+
+    .lang-btn.active {
+      background: #3d405b;
+      color: white;
+      border-color: #3d405b;
+    }
+
+    [lang="en"] { display: none; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="logo">
+    <div class="wave">
+      <span style="height:10px;background:#81b4cf"></span>
+      <span style="height:18px;background:#7dba99"></span>
+      <span style="height:28px;background:#e07a5f"></span>
+      <span style="height:22px;background:#f4c74a"></span>
+      <span style="height:28px;background:#e07a5f"></span>
+      <span style="height:18px;background:#7dba99"></span>
+      <span style="height:10px;background:#81b4cf"></span>
+    </div>
+    <span class="app-name">Ohrenspiel</span>
+  </div>
+
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('de')">Deutsch</button>
+    <button class="lang-btn" onclick="setLang('en')">English</button>
+  </div>
+
+  <!-- DEUTSCH -->
+  <div lang="de">
+    <h1>Datenschutzerklärung</h1>
+    <p class="updated">Zuletzt aktualisiert: Juli 2025</p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px">
+      <span class="badge">✓ Keine Werbung</span>
+      <span class="badge">✓ Keine Tracker</span>
+      <span class="badge">✓ Keine Kontodaten</span>
+    </div>
+
+    <h2>Kurzfassung</h2>
+    <p>Ohrenspiel sammelt, speichert oder überträgt keine persönlichen Daten. Die App funktioniert vollständig ohne Konto und ohne Internetverbindung – außer im Online-Modus über Game Center.</p>
+
+    <h2>Welche Daten werden verarbeitet?</h2>
+    <p><strong>Keine eigenen Daten.</strong> Ohrenspiel erhebt keine Nutzerdaten, keine Statistiken und keine Gerätedaten. Es gibt keine Analyse-Bibliotheken, keine Crash-Reporter und keine Werbenetzwerke in der App.</p>
+
+    <h2>Game Center (Online-Modus)</h2>
+    <p>Wenn du den Online-Modus nutzt, stellt Apple Game Center die Verbindung zwischen zwei Spielern her. Dabei verarbeitet Apple deinen Game-Center-Spitznamen und deine Apple-ID, um das Matchmaking durchzuführen. Ohrenspiel hat auf diese Daten keinen Zugriff und speichert sie nicht.</p>
+    <p>Apples Datenschutzrichtlinie findest du unter <a href="https://www.apple.com/de/legal/privacy/" target="_blank">apple.com/de/legal/privacy</a>.</p>
+
+    <h2>Lokale Speicherung</h2>
+    <p>Spielstände und Einstellungen werden ausschließlich lokal auf deinem Gerät gespeichert und verlassen dieses nie.</p>
+
+    <h2>Kinder</h2>
+    <p>Ohrenspiel ist für alle Altersgruppen geeignet (Altersfreigabe 4+). Es werden keinerlei Kinderdaten erhoben.</p>
+
+    <h2>Änderungen</h2>
+    <p>Sollten sich an dieser Erklärung wesentliche Änderungen ergeben, wird die aktualisierte Version unter dieser URL veröffentlicht.</p>
+
+    <h2>Kontakt</h2>
+    <p>Bei Fragen erreichst du mich unter <a href="mailto:joschkafriedag@gmail.com">joschkafriedag@gmail.com</a>.</p>
+  </div>
+
+  <!-- ENGLISH -->
+  <div lang="en">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: July 2025</p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px">
+      <span class="badge">✓ No ads</span>
+      <span class="badge">✓ No trackers</span>
+      <span class="badge">✓ No account data</span>
+    </div>
+
+    <h2>The short version</h2>
+    <p>Ohrenspiel does not collect, store, or transmit any personal data. The app works entirely without an account and without an internet connection — except in online mode via Game Center.</p>
+
+    <h2>What data is processed?</h2>
+    <p><strong>None of our own.</strong> Ohrenspiel collects no user data, no usage statistics, and no device data. There are no analytics libraries, crash reporters, or ad networks in the app.</p>
+
+    <h2>Game Center (online mode)</h2>
+    <p>When you use online mode, Apple Game Center establishes the connection between two players. Apple processes your Game Center nickname and Apple ID to perform matchmaking. Ohrenspiel has no access to this data and does not store it.</p>
+    <p>Apple's privacy policy is available at <a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a>.</p>
+
+    <h2>Local storage</h2>
+    <p>Game progress and settings are stored exclusively on your device and never leave it.</p>
+
+    <h2>Children</h2>
+    <p>Ohrenspiel is suitable for all ages (rated 4+). No data of any kind is collected from children.</p>
+
+    <h2>Changes</h2>
+    <p>If there are material changes to this policy, the updated version will be published at this URL.</p>
+
+    <h2>Contact</h2>
+    <p>If you have any questions, you can reach me at <a href="mailto:joschkafriedag@gmail.com">joschkafriedag@gmail.com</a>.</p>
+  </div>
+
+</div>
+
+<script>
+  function setLang(l) {
+    document.querySelectorAll('[lang]').forEach(el => {
+      el.style.display = el.getAttribute('lang') === l ? '' : 'none';
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent.toLowerCase().startsWith(l));
+    });
+  }
+</script>
+</body>
+</html>
