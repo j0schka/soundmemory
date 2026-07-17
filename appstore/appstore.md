@@ -131,7 +131,7 @@ Alle Punkte: **Keine**
 | Feld | Wert |
 |---|---|
 | Support-URL | `https://github.com/j0schka/ohrenspiel` *(oder eigene URL eintragen)* |
-| Datenschutz-URL | *(erforderlich — URL zur Datenschutzerklärung eintragen)* |
+| Datenschutz-URL | `https://j0schka.github.io/soundmemory/privacy.html` |
 | Marketing-URL | *(optional)* |
 
 ---
