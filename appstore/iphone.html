@@ -209,7 +209,7 @@
     <div class="phone" style="width:600px;height:1260px">
       <div class="phone-inner" style="background:#fef7ec">
         <div class="sb" style="color:#3d405b"><span>9:41</span><span style="font-size:18px">●●●</span></div>
-        <div class="sc" style="padding:0 20px 60px;overflow:hidden">
+        <div class="sc" style="padding:0 30px 60px;overflow:hidden">
           <!-- score bar -->
           <div style="display:flex;align-items:center;background:white;border-radius:20px;padding:16px 0;margin-bottom:20px;box-shadow:0 4px 16px rgba(61,64,91,.09);flex-shrink:0">
             <div style="flex:1;text-align:center">
@@ -228,15 +228,11 @@
               <div style="font-family:'Fredoka',sans-serif;font-size:52px;font-weight:700;color:#f5ead6;line-height:1">1</div>
             </div>
           </div>
-          <!-- 4×4 grid -->
-          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;flex:1">
+          <!-- 3×4 grid (12 cards) -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;flex:1;min-height:0">
             <div class="card-matched"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 14 L11 20 L22 8" stroke="rgba(255,255,255,.95)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <div class="card-matched"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 14 L11 20 L22 8" stroke="rgba(255,255,255,.95)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <div class="card-active"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="9" cy="22" r="5" fill="rgba(255,255,255,.92)"/><rect x="13.5" y="4" width="2" height="18" rx="1" fill="rgba(255,255,255,.92)"/><path d="M15.5 4 Q24 6 22 12 Q20 10 15.5 10z" fill="rgba(255,255,255,.92)"/></svg></div>
-            <div class="card-down"></div>
-            <div class="card-down"></div>
-            <div class="card-down"></div>
-            <div class="card-down"></div>
             <div class="card-down"></div>
             <div class="card-down"></div>
             <div class="card-down"></div>
@@ -276,7 +272,7 @@
 
   <!-- pass card -->
   <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:0 80px">
-    <div style="background:rgba(255,255,255,.14);border-radius:52px;padding:72px 80px;text-align:center;width:100%;backdrop-filter:blur(16px)">
+    <div style="background:rgba(255,255,255,.18);border-radius:52px;padding:72px 80px;text-align:center;width:100%;border:1.5px solid rgba(255,255,255,.25)">
       <div style="font-family:'Nunito',sans-serif;font-size:50px;color:rgba(255,255,255,.60)">Gerät weitergeben</div>
       <div style="font-family:'Fredoka',sans-serif;font-size:88px;font-weight:700;color:white;margin-top:16px">an Spieler 2</div>
       <div style="margin-top:52px;background:white;color:#e07a5f;border-radius:999px;padding:36px 0;font-family:'Fredoka',sans-serif;font-size:56px;font-weight:600">Ich bin bereit!</div>
@@ -290,7 +286,7 @@
 <!-- ════════════════════════════════
      05  GAME OVER
 ════════════════════════════════════ -->
-<section data-screen-label="05 GameOver" style="background:linear-gradient(150deg,#e07a5f 0%,#f4c74a 100%);">
+<section data-screen-label="05 GameOver" style="background:linear-gradient(150deg,#e07a5f 0%,#f4c74a 100%);justify-content:center;">
   <!-- confetti -->
   <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none">
     <div style="position:absolute;width:52px;height:52px;border-radius:50%;background:#6dab8b;top:7%;left:10%;opacity:.75"></div>
@@ -305,13 +301,12 @@
     <div style="position:absolute;width:44px;height:44px;border-radius:8px;background:#fffde7;bottom:18%;left:20%;opacity:.60"></div>
   </div>
 
-  <!-- headline -->
-  <div style="padding:200px 100px 0;position:relative">
+  <!-- centered content -->
+  <div style="position:relative;display:flex;flex-direction:column;gap:56px;padding:80px 80px">
+    <!-- headline -->
     <div class="hl-white" style="font-size:120px">Wer hat die<br>besten Ohren?</div>
-  </div>
 
-  <!-- result card -->
-  <div style="padding:80px 80px 0;position:relative">
+    <!-- result card -->
     <div style="background:rgba(255,255,255,.92);border-radius:60px;padding:72px 80px;box-shadow:0 28px 80px rgba(61,64,91,.22)">
       <div style="text-align:center;margin-bottom:48px">
         <div style="font-size:110px">🏆</div>
@@ -337,15 +332,13 @@
         <span>✋ 24 Züge</span><span>🕐 04:12</span>
       </div>
     </div>
-  </div>
 
-  <!-- buttons -->
-  <div style="display:flex;gap:28px;padding:56px 80px 0;position:relative">
-    <div style="flex:1;background:rgba(255,255,255,.9);border-radius:999px;padding:40px 0;text-align:center;font-family:'Fredoka',sans-serif;font-size:52px;font-weight:600;color:#e07a5f">Nochmal!</div>
-    <div style="flex:1;background:rgba(255,255,255,.22);border-radius:999px;padding:40px 0;text-align:center;font-family:'Fredoka',sans-serif;font-size:52px;font-weight:600;color:white">Zurück</div>
+    <!-- buttons -->
+    <div style="display:flex;gap:28px">
+      <div style="flex:1;background:rgba(255,255,255,.9);border-radius:999px;padding:40px 0;text-align:center;font-family:'Fredoka',sans-serif;font-size:52px;font-weight:600;color:#e07a5f">Nochmal!</div>
+      <div style="flex:1;background:rgba(255,255,255,.22);border-radius:999px;padding:40px 0;text-align:center;font-family:'Fredoka',sans-serif;font-size:52px;font-weight:600;color:white">Zurück</div>
+    </div>
   </div>
-
-  <div style="flex:1"></div>
 </section>
 
 </deck-stage>
