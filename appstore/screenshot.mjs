@@ -6,7 +6,7 @@ import fs from 'fs';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const configs = [
-  { file: 'iphone.html', width: 1290, height: 2796, prefix: 'iphone', count: 5 },
+  { file: 'iphone.html', width: 1284, height: 2778, prefix: 'iphone', count: 5 },
   { file: 'ipad.html',   width: 2048, height: 2732, prefix: 'ipad',   count: 5 },
 ];
 
