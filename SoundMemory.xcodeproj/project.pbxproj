@@ -421,7 +421,7 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					0C5DAA870F8BC525931BAF4F = {
-						DevelopmentTeam = "";
+						DevelopmentTeam = UZD6RUTVZP;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -631,7 +631,7 @@
 				CODE_SIGN_ENTITLEMENTS = SoundMemory/SoundMemory.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UZD6RUTVZP;
 				INFOPLIST_FILE = SoundMemory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -728,7 +728,7 @@
 				CODE_SIGN_ENTITLEMENTS = SoundMemory/SoundMemory.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UZD6RUTVZP;
 				INFOPLIST_FILE = SoundMemory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
