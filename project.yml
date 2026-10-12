@@ -71,4 +71,5 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.joschkafriedag.ohrenspiel.tests
+        GENERATE_INFOPLIST_FILE: YES
         TEST_HOST: $(BUILT_PRODUCTS_DIR)/SoundMemory.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SoundMemory

@@ -69,7 +69,8 @@ final class GameStateTests: XCTestCase {
             cards: Card.shuffledDeck(for: .easy),
             players: [Player(id: 1), Player(id: 2)],
             difficulty: .easy,
-            theme: .musical
+            theme: .musical,
+            playerMode: .versus
         )
         XCTAssertFalse(state.isGameOver)
         for i in state.cards.indices {
@@ -83,7 +84,8 @@ final class GameStateTests: XCTestCase {
             cards: [],
             players: [Player(id: 1, matchedPairCount: 3), Player(id: 2, matchedPairCount: 1)],
             difficulty: .easy,
-            theme: .musical
+            theme: .musical,
+            playerMode: .versus
         )
         XCTAssertEqual(state.winner?.id, 1)
     }
@@ -93,7 +95,8 @@ final class GameStateTests: XCTestCase {
             cards: [],
             players: [Player(id: 1, matchedPairCount: 2), Player(id: 2, matchedPairCount: 2)],
             difficulty: .easy,
-            theme: .musical
+            theme: .musical,
+            playerMode: .versus
         )
         XCTAssertNil(state.winner)
     }
